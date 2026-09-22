@@ -1,4 +1,6 @@
-racecar/titanium.py: TITANIUM build sheet (the fastest-car AI identity, named by
-the user) - per-track-shape allocation search + lap report; timing provenance
-stated in output (Python sim, not in-game).
+racecar/make_titanium_save.py: emit the Titanium car save (dev minimal follower
+template + Titanium allocation 4/10/6 + name). Stat mapping by PORT ID with
+bidirectional connection tracing + assert-3-before-write (first version
+silently wrote unmapped stats - self-caught via the trace, fixed).
+Writes both load points: Saves/RacingV2 + games/Racing/data/graphs.
 
