@@ -1,6 +1,4 @@
-racecar/: fastest-car scaffold - joint handling model (turn rate = f(speed_pts,
-turn_pts, v) per user observation), bicycle-model lap sim with pure pursuit,
-brute-force 20-pt budget search. v0 [unverified] calibration pending the
-RACING_CONSTANTS 3 capture session (stat sweeps + TimePlot yaw rate).
-fix_display.ps1: cover the manual-launch exe (games/Racing/Aialanders.exe).
+racecar/titanium.py: TITANIUM build sheet (the fastest-car AI identity, named by
+the user) - per-track-shape allocation search + lap report; timing provenance
+stated in output (Python sim, not in-game).
 
