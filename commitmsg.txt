@@ -1,12 +1,9 @@
-racecar: round 4 - APEX RACING LINE from the waypoint corridor edges.
-Decomp-pinned (Waypoint.GetLeftPoint/GetRightPoint/GetLateralEdgePoint/
-ProjectExtentsOntoAxis): Left/Right = car-WIDTH-aware corridor edge points,
-width to both sides = |L-C|/|R-C| derivable in-graph (Blockhead debug =
-Waypoint.BuildDebugSnapshot, real). Graph: L/R edges of Next + turn-side pick
-as pure float math (cross_y of the severity normals, target = L + (R-L) *
-clamp(-cross*KAPEX,0,1)) -> Autosteer aims the INSIDE edge = the champions
-Waypoint 1L/1R line. KAPEX = -2.0 Float node = live side-flip/tuning knob.
-Ray map pinned from hints: RaycastHit2 = forward (wall brake correct);
-HitInfo.Float1 = distance, infinity when clear (NaN-safe). 81 nodes / 106
-conns, layered layout, validator-gated.
+racecar: round 5 - the wall-scrape fix (user: totalled like NASCAR). TWO
+stacked bugs: (1) cross_y sign convention - Unity is LEFT-handed so cross_y>0
+is a RIGHT turn; the mapping was inverted and aimed the OUTSIDE edge into the
+wall (proved analytically before the edit). (2) the aim point sat ON the
+corridor edge with zero margin - the car has width and scrapes. Fixed: KAPEX
++2.0 (handedness-correct = inside edge) and target clamped to the middle 50%
+of the corridor (t in [0.25, 0.75], both live-tunable Float nodes). 81 nodes
+/ 106 conns, validator-gated, deployed both load points.
 

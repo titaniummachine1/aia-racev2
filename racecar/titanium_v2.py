@@ -144,10 +144,12 @@ def build() -> Graph:
 
     # ---- apex racing line from the Left/Right corridor edges (user 2026-09-22;
     #      Waypoint.GetLeftPoint/GetRightPoint = car-width-aware edges) ----
-    # target = L + (R - L) * clamp(-cross_y * KAPEX, 0, 1): turn left -> t=0 ->
-    # Left edge; turn right -> t=1 -> Right edge. cross_y = nA.z*nB.x - nA.x*nB.z
-    # (reuses the severity chain normals). KAPEX sign FLIPS sides if the car
-    # apexes outside - observable on track, then edit the Float node in-game.
+    # target = L + (R - L) * clamp(+cross_y * KAPEX, TMIN, TMAX). Unity is
+    # LEFT-handed: cross_y = nA.z*nB.x - nA.x*nB.z > 0 on a RIGHT turn -> t->1
+    # -> Right edge = INSIDE of a right turn (round 5 fix: the first build had
+    # the sign inverted and drove the OUTSIDE line into the wall, user report).
+    # TMIN/TMAX = 0.25/0.75: NEVER aim at the edge point - the car has width
+    # and scrapes (user: totalled on the wall). All three = live-tunable nodes.
     l1 = g.add("RacingV2Waypoint", modifier="1")            # Left edge of Next
     r1 = g.add("RacingV2Waypoint", modifier="2")            # Right edge of Next
     g.connect(wp_next, "Waypoint1", l1, "Waypoint1")
@@ -167,11 +169,11 @@ def build() -> Graph:
     g.connect(m2, "Float1", crossy, "Float2")
     tside = g.add("MultiplyFloats")
     g.connect(crossy, "Float1", tside, "Float1")
-    g.connect(F(-2.0), "Float1", tside, "Float2")           # KAPEX: FLIP SIGN HERE
+    g.connect(F(2.0), "Float1", tside, "Float2")            # KAPEX + (handedness!)
     tclamp = g.add("ClampFloat")
     g.connect(tside, "Float1", tclamp, "Float1")
-    g.connect(F(0.0), "Float1", tclamp, "Float2")
-    g.connect(F(1.0), "Float1", tclamp, "Float3")
+    g.connect(F(0.25), "Float1", tclamp, "Float2")          # stay 25% off the L edge
+    g.connect(F(0.75), "Float1", tclamp, "Float3")          # stay 25% off the R edge
     edge = g.add("SubtractVector3")                         # R - L
     g.connect(r1, "Vector31", edge, "Vector31")
     g.connect(l1, "Vector31", edge, "Vector32")
