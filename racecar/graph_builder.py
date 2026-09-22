@@ -6,9 +6,12 @@ gets fresh sIDs. PORTS RESOLVE BY (id, POLARITY): many nodes carry an input
 AND an output with the same port id (AddFloats Float1 in/out) - name-only
 matching wired outputs to outputs and killed the graph (user bug report
 2026-09-22). connect() always takes src=output(1), dst=input(0) and TYPE-
-checks the pair. LAYOUT uses each template's sizeDelta as the node's collision
-bounds and shelf-packs so nodes never overlap (same rule as the compiler
-layout the user pointed at).
+checks the pair.
+
+LAYOUT = layered dataflow (AST-style, user request 2026-09-22): column =
+topological depth (sources left, sinks right), rows eased by the barycenter of
+each node's already-placed inputs, then vertically spaced by the node's
+sizeDelta collision bounds so nothing overlaps and wires run mostly forward.
 """
 from __future__ import annotations
 import json
@@ -19,7 +22,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 _T = json.load(open(os.path.join(HERE, "templates.json"), encoding="utf-8"))
 CONN = _T.pop("_connection")
 
-GAP_X, GAP_Y, SHELF_WIDTH = 90.0, 70.0, 1750.0
+GAP_X, GAP_Y = 140.0, 48.0
 
 
 def _new_id() -> str:
@@ -34,9 +37,7 @@ class Graph:
     def __init__(self):
         self.nodes = []
         self.conns = []
-        self._cx = 0.0
-        self._cy = 0.0
-        self._row_h = 0.0
+        self._explicit = {}  # node -> (x, y) user-placed
 
     def _bounds(self, node):
         rt = node.get("serializableRectTransform") or {}
@@ -58,20 +59,8 @@ class Graph:
             p["sID"] = _new_id()
             p["nodeSID"] = node["sID"]
         w, h = self._bounds(node)
-        if x is None or y is None:  # shelf-pack by collision bounds
-            if self._cx + w > SHELF_WIDTH:
-                self._cx = 0.0
-                self._cy -= self._row_h + GAP_Y
-                self._row_h = 0.0
-            x, y = self._cx, self._cy
-            self._cx += w + GAP_X
-            self._row_h = max(self._row_h, h)
-        rt = node.get("serializableRectTransform")
-        if isinstance(rt, dict):
-            for key in ("position", "localPosition", "anchoredPosition"):
-                v = rt.get(key)
-                if isinstance(v, dict):
-                    v["x"], v["y"] = x, y
+        if x is not None and y is not None:
+            self._explicit[node["sID"]] = (x, y)
         self.nodes.append(node)
         return node
 
@@ -108,6 +97,66 @@ class Graph:
         c["port1InstanceID"] = -1
         self.conns.append(c)
 
+    def layout(self):
+        """AST-style layered dataflow layout (user request 2026-09-22).
+        Column = topological depth; row order = barycenter of inputs; vertical
+        spacing honours each node's sizeDelta collision bounds. Result: wires
+        run mostly left-to-right and nodes never overlap."""
+        by_sid = {}
+        for n in self.nodes:
+            for p in n.get("serializablePorts", []):
+                by_sid[p["sID"]] = n
+        ins = {n["sID"]: [] for n in self.nodes}
+        for c in self.conns:
+            a = by_sid.get(c["port0SID"])
+            b = by_sid.get(c["port1SID"])
+            if a is not None and b is not None and a is not b:
+                ins[b["sID"]].append(a)
+        depth = {n["sID"]: 0 for n in self.nodes}
+        for _ in range(len(self.nodes)):          # relax: longest-path layers
+            changed = False
+            for n in self.nodes:
+                for s in ins[n["sID"]]:
+                    if depth[s["sID"]] + 1 > depth[n["sID"]]:
+                        depth[n["sID"]] = depth[s["sID"]] + 1
+                        changed = True
+            if not changed:
+                break
+        cols = {}
+        for n in self.nodes:
+            cols.setdefault(depth[n["sID"]], []).append(n)
+        y_of = {}
+        x = 0.0
+        for c in sorted(cols):
+            group = cols[c]
+            def bary(n):
+                ys = [y_of[s["sID"]] for s in ins[n["sID"]] if s["sID"] in y_of]
+                return sum(ys) / len(ys) if ys else 0.0
+            group.sort(key=bary)                   # ease rows by input centre
+            y = 0.0
+            prev_h = 0.0
+            for n in group:
+                w, h = self._bounds(n)
+                y -= (prev_h / 2.0 + GAP_Y + h / 2.0) if prev_h else 0.0
+                if n["sID"] in self._explicit:
+                    px, py = self._explicit[n["sID"]]
+                    y_of[n["sID"]] = py
+                    self._place(n, px, py)
+                else:
+                    y_of[n["sID"]] = y
+                    self._place(n, x, y)
+                prev_h = h
+            x += 320.0 + GAP_X                     # column stride fits 256-wide
+        return self
+
+    def _place(self, node, x, y):
+        rt = node.get("serializableRectTransform")
+        if isinstance(rt, dict):
+            for key in ("position", "localPosition", "anchoredPosition"):
+                v = rt.get(key)
+                if isinstance(v, dict):
+                    v["x"], v["y"] = x, y
+
     def validate(self):
         """Loud self-check before ANY file is written (no silent bad ships).
         - every connection: real ports, output->input, matching types
@@ -141,6 +190,7 @@ class Graph:
         return True
 
     def save(self, *paths):
+        self.layout()
         self.validate()
         g = {"serializableNodes": self.nodes, "serializableConnections": self.conns}
         for p in paths:

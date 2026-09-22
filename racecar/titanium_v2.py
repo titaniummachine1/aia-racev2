@@ -66,6 +66,8 @@ def build() -> Graph:
     speed = g.add("RacingV2GetFloat", modifier="0")        # Speed
     wp_prev = g.add("RacingV2GetWaypoint", modifier="1")   # Previous
     wp_next = g.add("RacingV2GetWaypoint", modifier="0")   # Next
+    g.connect(F(0.0), "Float1", wp_prev, "Float1")        # index: never null
+    g.connect(F(0.0), "Float1", wp_next, "Float1")
     idx = g.add("RacingV2GetFloat", modifier="2")          # next wp index
     plus1 = g.add("AddFloats")
     g.connect(idx, "Float1", plus1, "Float1")
@@ -140,15 +142,50 @@ def build() -> Graph:
     g.connect(F(0.0), "Float1", brake, "Float2")
     g.connect(F(1.0), "Float1", brake, "Float3")
 
-    # ---- steering muscle (v0): Autosteer toward the P2 lookahead ----
+    # ---- steering muscle (v0): Autosteer toward NEXT centre (dev-proven aim;
+    #      the P2 two-ahead aim drove into walls at 77kph - 21:59 evidence) ----
     steer = g.add("Autosteer")
-    g.connect(p2, "Vector31", steer, "Vector31")
+    g.connect(p1, "Vector31", steer, "Vector31")
+
+    # ---- wall brake from the front ray (driver_config: r=0.75 d=12 avoid=4) ----
+    sc = g.add("Spherecast")
+    g.connect(F(0.75), "Float1", sc, "Float1")
+    g.connect(F(12.0), "Float1", sc, "Float2")
+    rays = g.add("CarRaycasts")
+    g.connect(sc, "Spherecast1", rays, "Spherecast1")
+    hit = g.add("HitInfo")
+    g.connect(rays, "RaycastHit2", hit, "RaycastHit1")    # centre-front candidate
+    gapw = g.add("SubtractFloats")
+    g.connect(F(4.0), "Float1", gapw, "Float1")
+    g.connect(hit, "Float1", gapw, "Float2")
+    wscale = g.add("MultiplyFloats")
+    g.connect(gapw, "Float1", wscale, "Float1")
+    g.connect(F(0.5), "Float1", wscale, "Float2")
+    brake_wall = g.add("ClampFloat")
+    g.connect(wscale, "Float1", brake_wall, "Float1")
+    g.connect(F(0.0), "Float1", brake_wall, "Float2")
+    g.connect(F(1.0), "Float1", brake_wall, "Float3")
+    # max(brake, brake_wall) = (a + b - |a - b|) / 2  (no compare enums needed)
+    bsum = g.add("AddFloats")
+    g.connect(brake, "Float1", bsum, "Float1")
+    g.connect(brake_wall, "Float1", bsum, "Float2")
+    bdf = g.add("SubtractFloats")
+    g.connect(brake, "Float1", bdf, "Float1")
+    g.connect(brake_wall, "Float1", bdf, "Float2")
+    babs = g.add("AbsFloat")
+    g.connect(bdf, "Float1", babs, "Float1")
+    bmax = g.add("SubtractFloats")
+    g.connect(bsum, "Float1", bmax, "Float1")
+    g.connect(babs, "Float1", bmax, "Float2")
+    brake_out = g.add("MultiplyFloats")
+    g.connect(bmax, "Float1", brake_out, "Float1")
+    g.connect(F(0.5), "Float1", brake_out, "Float2")
 
     # ---- controller + observability (TimePlot = ONE series: name + value) ----
     ctl = g.add("ModularCarController")
     g.connect(throttle, "Float1", ctl, "Float1")
     g.connect(steer, "Float1", ctl, "Float2")
-    g.connect(brake, "Float1", ctl, "Float3")
+    g.connect(brake_out, "Float1", ctl, "Float3")
     plot1 = g.add("TimePlot")
     g.connect(g.add("String", modifier="v_tgt"), "String1", plot1, "String1")
     g.connect(v_tgt, "Float1", plot1, "Float1")
@@ -156,7 +193,9 @@ def build() -> Graph:
     g.connect(g.add("String", modifier="speed"), "String1", plot2, "String1")
     g.connect(speed, "Float1", plot2, "Float1")
     dbg = g.add("Debug")
-    g.connect(brake, "Float1", dbg, "Any1")
+    g.connect(brake_out, "Float1", dbg, "Any1")
+    dbg2 = g.add("Debug")
+    g.connect(hit, "Float1", dbg2, "Any1")   # ray-B distance: identify the ray
 
     # tag the documented-optional inputs for validate()
     g._allow_unwired = set()

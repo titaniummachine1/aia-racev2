@@ -1,11 +1,12 @@
-racecar: TitaniumV2 round 2 - THE BUGS THE USER FOUND: (1) ports resolved by
-name only while math nodes carry in+out both named Float1 - wires landed
-output-to-output and the car stood still; connect() now resolves by
-(id, POLARITY) src=out dst=in with TYPE checking. (2) missing car properties
-block (ConstructRacingV2Properties full 12-port dev pattern: name/color/
-country/stats - speed 10 turn 10 health 0 per user rules). (3) clumped nodes -
-layout now shelf-packs by each template sizeDelta collision bounds.
-validate() gates every save: direction, types, required inputs wired (with
-documented-optional allowlist). 52 nodes / 62 conns, deployed both load
-points. TimePlot = one series (name+value).
+racecar: round 3 - evidence-driven crash fix + AST-style layered layout.
+Crash decoded from the 21:59 timeplot (simTime 7.96s): v_tgt ALIVE 50->122.9
+(severity brain works), speed hit 77.1 then collapsed to ~3 = STEERED into a
+wall. Fixes: Autosteer aims NEXT centre (dev-proven; the P2 two-ahead aim
+overshot corners), waypoint index inputs hard-wired non-null, wall brake from
+the front ray (driver_config r=0.75 d=12 avoid 4.0) merged via max() as
+(a+b-|a-b|)/2 (still zero compare-enum guesses), ray-B Debug to identify the
+ray letter. LAYOUT: layered dataflow (topo columns + barycenter rows +
+sizeDelta collision spacing) - 18x11 grid, wires run mostly forward.
+Note: game timeplot JSON writes locale decimal commas - parse with the
+digit,digit fixup.
 
