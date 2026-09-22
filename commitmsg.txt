@@ -1,10 +1,11 @@
-racecar: TitaniumV2 = the analytical controller AS A GAME GRAPH (41 nodes /
-50 wires, deployed to Saves/RacingV2 + data/graphs). Severity = 1-dot of
-normalized waypoint segments (sign-invariant), v_tgt = clamp(FAST-severity*
-GAIN), throttle/brake = pure float clamps (no enum guesses), Autosteer as v0
-steer muscle toward P2 lookahead, ModularCarController direct drive,
-TimePlot(v_tgt,speed)+Debug(brake) = observable assumptions. Plus
-extract_templates.py (53 node templates + port/polarity maps mined from the
-14 saves) + graph_builder.py (save emitter). Constants deduped (size =
-solver speed). Sandbox files stamped NOT A SIMULATOR (user rule).
+racecar: TitaniumV2 round 2 - THE BUGS THE USER FOUND: (1) ports resolved by
+name only while math nodes carry in+out both named Float1 - wires landed
+output-to-output and the car stood still; connect() now resolves by
+(id, POLARITY) src=out dst=in with TYPE checking. (2) missing car properties
+block (ConstructRacingV2Properties full 12-port dev pattern: name/color/
+country/stats - speed 10 turn 10 health 0 per user rules). (3) clumped nodes -
+layout now shelf-packs by each template sizeDelta collision bounds.
+validate() gates every save: direction, types, required inputs wired (with
+documented-optional allowlist). 52 nodes / 62 conns, deployed both load
+points. TimePlot = one series (name+value).
 

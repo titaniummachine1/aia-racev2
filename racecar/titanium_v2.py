@@ -21,10 +21,17 @@ SAVES = (r"C:\Users\Terminatort8000\AppData\LocalLow\Unicorn One\AIComp"
          r"\Saves\RacingV2\TitaniumV2.txt")
 GRAPHS = r"c:\gitProjects\aialanders-legacy\games\Racing\data\graphs\TitaniumV2.txt"
 
-# tuning (mph-ish game units; editable in-editor via the Float nodes)
+# tuning (game units; editable in-editor via the Float nodes)
 FAST, GAIN, VMIN = 220.0, 350.0, 50.0
 THR_NEAR, THR_GAIN = 2.0, 10.0
 BRK_OVER, BRK_GAIN = 3.0, 0.3
+
+# optional inputs documented as such (validate() tolerates only these)
+ALLOW_UNWIRED = {
+    "RacingV2GetWaypoint": ["Float1"],   # index only needed in By-index mode
+    "RacingV2Waypoint": ["Transform1"],  # hint: optional
+    "TimePlot": ["Color1", "String2", "Float2", "Float3"],  # 1 series: name+value
+}
 
 
 def build() -> Graph:
@@ -38,6 +45,22 @@ def build() -> Graph:
         return _const[v]
     def fl(node, port="Float1"):
         return g.port(node, port)
+
+    # ---- car properties block (the dev car's full 12-port pattern) ----
+    props = g.add("ConstructRacingV2Properties")
+    g.connect(g.add("String", modifier="TitaniumV2"), "String1", props, "String1")
+    g.connect(g.add("String", modifier=""), "String1", props, "String2")
+    car_color = g.add("Color", modifier="Yellow")
+    g.connect(car_color, "Color1", props, "Color1")
+    g.connect(g.add("Color", modifier="Yellow"), "Color1", props, "Color2")
+    g.connect(g.add("RandomColor", modifier="Blonde"), "Color1", props, "Color3")
+    g.connect(g.add("Country", modifier="United States of America"),
+              "Country1", props, "Country1")
+    for port in ("Float1", "Float2", "Float3"):
+        g.connect(F(0.0), "Float1", props, port)
+    g.connect(g.add("Stat", modifier="10"), "Stat1", props, "Stat1")   # speed
+    g.connect(g.add("Stat", modifier="10"), "Stat1", props, "Stat2")   # turn
+    g.connect(g.add("Stat", modifier="0"), "Stat1", props, "Stat3")    # health: useless
 
     # ---- sensors ----
     speed = g.add("RacingV2GetFloat", modifier="0")        # Speed
@@ -121,18 +144,26 @@ def build() -> Graph:
     steer = g.add("Autosteer")
     g.connect(p2, "Vector31", steer, "Vector31")
 
-    # ---- controller + observability ----
-    ctl = g.add("ModularCarController", x=900.0, y=0.0)
+    # ---- controller + observability (TimePlot = ONE series: name + value) ----
+    ctl = g.add("ModularCarController")
     g.connect(throttle, "Float1", ctl, "Float1")
     g.connect(steer, "Float1", ctl, "Float2")
     g.connect(brake, "Float1", ctl, "Float3")
-    plot = g.add("TimePlot", x=900.0, y=200.0)
-    g.connect(g.add("String", modifier="v_tgt"), "String1", plot, "String1")
-    g.connect(v_tgt, "Float1", plot, "Float1")
-    g.connect(g.add("String", modifier="speed"), "String1", plot, "String2")
-    g.connect(speed, "Float1", plot, "Float2")
-    dbg = g.add("Debug", x=900.0, y=-200.0)
+    plot1 = g.add("TimePlot")
+    g.connect(g.add("String", modifier="v_tgt"), "String1", plot1, "String1")
+    g.connect(v_tgt, "Float1", plot1, "Float1")
+    plot2 = g.add("TimePlot")
+    g.connect(g.add("String", modifier="speed"), "String1", plot2, "String1")
+    g.connect(speed, "Float1", plot2, "Float1")
+    dbg = g.add("Debug")
     g.connect(brake, "Float1", dbg, "Any1")
+
+    # tag the documented-optional inputs for validate()
+    g._allow_unwired = set()
+    for n in g.nodes:
+        for p in n.get("serializablePorts", []):
+            if p.get("id") in ALLOW_UNWIRED.get(n["id"], []):
+                g._allow_unwired.add(p["sID"])
     return g
 
 
