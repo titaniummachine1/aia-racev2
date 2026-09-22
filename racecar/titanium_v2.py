@@ -25,6 +25,12 @@ GRAPHS = r"c:\gitProjects\aialanders-legacy\games\Racing\data\graphs\TitaniumV2.
 FAST, GAIN, VMIN = 220.0, 350.0, 50.0
 THR_NEAR, THR_GAIN = 2.0, 10.0
 BRK_OVER, BRK_GAIN = 3.0, 0.3
+# turn feasibility (closed-form rollout substitute, user 2026-09-22)
+A_LAT = 25.0           # lateral grip budget in game units      [calibrate]
+A_BRAKE = 8.0          # braking decel                          [calibrate]
+K_WIDTH = 0.1          # corridor width -> radius factor        [calibrate]
+# STAT BUDGET = 15 POINTS TOTAL (user 2026-09-22 - the 20 in RACING_CONSTANTS
+# is WRONG; overexerting makes the game trim points top-to-bottom).
 
 # optional inputs documented as such (validate() tolerates only these)
 ALLOW_UNWIRED = {
@@ -58,8 +64,8 @@ def build() -> Graph:
               "Country1", props, "Country1")
     for port in ("Float1", "Float2", "Float3"):
         g.connect(F(0.0), "Float1", props, port)
-    g.connect(g.add("Stat", modifier="10"), "Stat1", props, "Stat1")   # speed
-    g.connect(g.add("Stat", modifier="10"), "Stat1", props, "Stat2")   # turn
+    g.connect(g.add("Stat", modifier="7"), "Stat1", props, "Stat1")    # speed (15-pt budget)
+    g.connect(g.add("Stat", modifier="8"), "Stat1", props, "Stat2")    # turn (was not enough)
     g.connect(g.add("Stat", modifier="0"), "Stat1", props, "Stat3")    # health: useless
 
     # ---- sensors ----
@@ -188,6 +194,80 @@ def build() -> Graph:
     steer = g.add("Autosteer")
     g.connect(apex, "Vector31", steer, "Vector31")
 
+    # ---- turn feasibility: WILL THIS CORNER EAT THE WALL? (user 2026-09-22) ----
+    # Closed-form rollout: corner radius R = abc/(2|cross_y|) from the waypoint
+    # triple, shrunk when the corridor is narrow (the waypoint dims - edges are
+    # car-extent aware via ProjectExtentsOntoAxis), then the energy test
+    #   v^2 > A_LAT*R_eff + 2*A_BRAKE*d  ->  brake BEFORE the corner.
+    # Squares only - no sqrt/power node needed (there is none in the ISA!).
+    car_ref = g.add("RacingV2GetCar", modifier="2")            # Self
+    g.connect(F(0.0), "Float1", car_ref, "Float1")
+    cinfo = g.add("CarInfo")
+    g.connect(car_ref, "Car1", cinfo, "Car1")
+    cpos = g.add("RelativePosition", modifier="13")            # car world position
+    g.connect(cinfo, "Transform1", cpos, "Transform1")
+    ma = g.add("Magnitude")
+    g.connect(dA, "Vector31", ma, "Vector31")
+    mb = g.add("Magnitude")
+    g.connect(dB, "Vector31", mb, "Vector31")
+    dsum = g.add("AddVector3")                                 # (P2-P0) chord
+    g.connect(dA, "Vector31", dsum, "Vector31")
+    g.connect(dB, "Vector31", dsum, "Vector32")
+    mc = g.add("Magnitude")
+    g.connect(dsum, "Vector31", mc, "Vector31")
+    ab = g.add("MultiplyFloats")
+    g.connect(ma, "Float1", ab, "Float1")
+    g.connect(mb, "Float1", ab, "Float2")
+    abc = g.add("MultiplyFloats")
+    g.connect(ab, "Float1", abc, "Float1")
+    g.connect(mc, "Float1", abc, "Float2")
+    crossabs = g.add("AbsFloat")
+    g.connect(crossy, "Float1", crossabs, "Float1")
+    denom = g.add("MultiplyFloats")                            # 2*|cross_y|
+    g.connect(F(2.0), "Float1", denom, "Float1")
+    g.connect(crossabs, "Float1", denom, "Float2")
+    radius = g.add("DivideFloats")                             # R = abc/(2|cross|)
+    g.connect(abc, "Float1", radius, "Float1")
+    g.connect(denom, "Float1", radius, "Float2")
+    width = g.add("Distance")                                  # corridor width |L-R|
+    g.connect(l1, "Vector31", width, "Vector31")
+    g.connect(r1, "Vector31", width, "Vector32")
+    wscale = g.add("MultiplyFloats")
+    g.connect(width, "Float1", wscale, "Float1")
+    g.connect(F(K_WIDTH), "Float1", wscale, "Float2")
+    wfac = g.add("ClampFloat")                                 # narrow track -> shrink
+    g.connect(wscale, "Float1", wfac, "Float1")
+    g.connect(F(0.5), "Float1", wfac, "Float2")
+    g.connect(F(1.0), "Float1", wfac, "Float3")
+    ref_r = g.add("MultiplyFloats")                            # R_eff = R * width factor
+    g.connect(radius, "Float1", ref_r, "Float1")
+    g.connect(wfac, "Float1", ref_r, "Float2")
+    grip_r = g.add("MultiplyFloats")                           # A_LAT * R_eff
+    g.connect(F(A_LAT), "Float1", grip_r, "Float1")
+    g.connect(ref_r, "Float1", grip_r, "Float2")
+    dist_c = g.add("Distance")                                 # d to the corner
+    g.connect(cpos, "Vector31", dist_c, "Vector31")
+    g.connect(p1, "Vector31", dist_c, "Vector32")
+    brakebuf = g.add("MultiplyFloats")                         # 2*A_BRAKE*d
+    g.connect(F(2.0 * A_BRAKE), "Float1", brakebuf, "Float1")
+    g.connect(dist_c, "Float1", brakebuf, "Float2")
+    budget_sum = g.add("AddFloats")                            # A_LAT*R + 2ab*d
+    g.connect(grip_r, "Float1", budget_sum, "Float1")
+    g.connect(brakebuf, "Float1", budget_sum, "Float2")
+    vsq = g.add("MultiplyFloats")                              # v^2
+    g.connect(speed, "Float1", vsq, "Float1")
+    g.connect(speed, "Float1", vsq, "Float2")
+    vsgap = g.add("SubtractFloats")                            # over budget?
+    g.connect(vsq, "Float1", vsgap, "Float1")
+    g.connect(budget_sum, "Float1", vsgap, "Float2")
+    vscale = g.add("MultiplyFloats")
+    g.connect(vsgap, "Float1", vscale, "Float1")
+    g.connect(F(0.05), "Float1", vscale, "Float2")
+    brake_corner = g.add("ClampFloat")
+    g.connect(vscale, "Float1", brake_corner, "Float1")
+    g.connect(F(0.0), "Float1", brake_corner, "Float2")
+    g.connect(F(1.0), "Float1", brake_corner, "Float3")
+
     # ---- wall brake from the front ray (driver_config: r=0.75 d=12 avoid=4) ----
     sc = g.add("Spherecast")
     g.connect(F(0.75), "Float1", sc, "Float1")
@@ -206,7 +286,8 @@ def build() -> Graph:
     g.connect(wscale, "Float1", brake_wall, "Float1")
     g.connect(F(0.0), "Float1", brake_wall, "Float2")
     g.connect(F(1.0), "Float1", brake_wall, "Float3")
-    # max(brake, brake_wall) = (a + b - |a - b|) / 2  (no compare enums needed)
+    # max3(brake, brake_wall, brake_corner) = two ((a+b-|a-b|)/2) stages
+    # (no compare enums needed anywhere)
     bsum = g.add("AddFloats")
     g.connect(brake, "Float1", bsum, "Float1")
     g.connect(brake_wall, "Float1", bsum, "Float2")
@@ -218,13 +299,33 @@ def build() -> Graph:
     bmax = g.add("SubtractFloats")
     g.connect(bsum, "Float1", bmax, "Float1")
     g.connect(babs, "Float1", bmax, "Float2")
+    bpair = g.add("MultiplyFloats")
+    g.connect(bmax, "Float1", bpair, "Float1")
+    g.connect(F(0.5), "Float1", bpair, "Float2")               # max(brake, wall)
+    csum = g.add("AddFloats")
+    g.connect(bpair, "Float1", csum, "Float1")
+    g.connect(brake_corner, "Float1", csum, "Float2")
+    cdf = g.add("SubtractFloats")
+    g.connect(bpair, "Float1", cdf, "Float1")
+    g.connect(brake_corner, "Float1", cdf, "Float2")
+    cabs = g.add("AbsFloat")
+    g.connect(cdf, "Float1", cabs, "Float1")
+    cmax = g.add("SubtractFloats")
+    g.connect(csum, "Float1", cmax, "Float1")
+    g.connect(cabs, "Float1", cmax, "Float2")
     brake_out = g.add("MultiplyFloats")
-    g.connect(bmax, "Float1", brake_out, "Float1")
-    g.connect(F(0.5), "Float1", brake_out, "Float2")
+    g.connect(cmax, "Float1", brake_out, "Float1")
+    g.connect(F(0.5), "Float1", brake_out, "Float2")           # max3 result
 
     # ---- controller + observability (TimePlot = ONE series: name + value) ----
     ctl = g.add("ModularCarController")
-    g.connect(throttle, "Float1", ctl, "Float1")
+    thr_cut = g.add("SubtractFloats")                          # 1 - brake: lift
+    g.connect(F(1.0), "Float1", thr_cut, "Float1")
+    g.connect(brake_out, "Float1", thr_cut, "Float2")
+    thr_final = g.add("MultiplyFloats")                        # throttle * lift
+    g.connect(throttle, "Float1", thr_final, "Float1")
+    g.connect(thr_cut, "Float1", thr_final, "Float2")
+    g.connect(thr_final, "Float1", ctl, "Float1")
     g.connect(steer, "Float1", ctl, "Float2")
     g.connect(brake_out, "Float1", ctl, "Float3")
     plot1 = g.add("TimePlot")

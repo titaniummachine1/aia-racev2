@@ -1,9 +1,13 @@
-racecar: round 5 - the wall-scrape fix (user: totalled like NASCAR). TWO
-stacked bugs: (1) cross_y sign convention - Unity is LEFT-handed so cross_y>0
-is a RIGHT turn; the mapping was inverted and aimed the OUTSIDE edge into the
-wall (proved analytically before the edit). (2) the aim point sat ON the
-corridor edge with zero margin - the car has width and scrapes. Fixed: KAPEX
-+2.0 (handedness-correct = inside edge) and target clamped to the middle 50%
-of the corridor (t in [0.25, 0.75], both live-tunable Float nodes). 81 nodes
-/ 106 conns, validator-gated, deployed both load points.
+racecar: round 6 - TURN FEASIBILITY BRAIN + 15-point budget (user facts).
+(1) STAT BUDGET = 15 not 20 (overexert = game trims top-to-bottom); alloc =
+speed 7 / turn 8 / health 0 (crash feedback: too much speed, not enough turn).
+(2) Closed-form rollout for WILL-I-MAKE-THIS-TURN: corner radius
+R = abc/(2|cross_y|) from the waypoint triple, shrunk by corridor width
+(Distance(L,R) = the waypoint dims; edges already car-extent aware via
+ProjectExtentsOntoAxis), then the energy test v^2 > A_LAT*R_eff + 2*A_BRAKE*d
+-> brake_corner BEFORE the wall (squares only - the ISA has no sqrt/power
+node). (3) brake = max3(speed-brake, wall-ray brake, corner brake) via
+((a+b-|a-b|)/2) stages; throttle interlocks with (1-brake) so it lifts.
+Car pos = GetCar(2)->CarInfo->RelativePosition(13) (all hint-pinned).
+KNOBS (live Float nodes): A_LAT 25, A_BRAKE 8, K_WIDTH 0.1, FAST 220.
 
