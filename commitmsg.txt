@@ -1,12 +1,12 @@
-racecar: round 3 - evidence-driven crash fix + AST-style layered layout.
-Crash decoded from the 21:59 timeplot (simTime 7.96s): v_tgt ALIVE 50->122.9
-(severity brain works), speed hit 77.1 then collapsed to ~3 = STEERED into a
-wall. Fixes: Autosteer aims NEXT centre (dev-proven; the P2 two-ahead aim
-overshot corners), waypoint index inputs hard-wired non-null, wall brake from
-the front ray (driver_config r=0.75 d=12 avoid 4.0) merged via max() as
-(a+b-|a-b|)/2 (still zero compare-enum guesses), ray-B Debug to identify the
-ray letter. LAYOUT: layered dataflow (topo columns + barycenter rows +
-sizeDelta collision spacing) - 18x11 grid, wires run mostly forward.
-Note: game timeplot JSON writes locale decimal commas - parse with the
-digit,digit fixup.
+racecar: round 4 - APEX RACING LINE from the waypoint corridor edges.
+Decomp-pinned (Waypoint.GetLeftPoint/GetRightPoint/GetLateralEdgePoint/
+ProjectExtentsOntoAxis): Left/Right = car-WIDTH-aware corridor edge points,
+width to both sides = |L-C|/|R-C| derivable in-graph (Blockhead debug =
+Waypoint.BuildDebugSnapshot, real). Graph: L/R edges of Next + turn-side pick
+as pure float math (cross_y of the severity normals, target = L + (R-L) *
+clamp(-cross*KAPEX,0,1)) -> Autosteer aims the INSIDE edge = the champions
+Waypoint 1L/1R line. KAPEX = -2.0 Float node = live side-flip/tuning knob.
+Ray map pinned from hints: RaycastHit2 = forward (wall brake correct);
+HitInfo.Float1 = distance, infinity when clear (NaN-safe). 81 nodes / 106
+conns, layered layout, validator-gated.
 

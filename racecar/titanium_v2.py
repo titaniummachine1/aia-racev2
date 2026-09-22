@@ -142,10 +142,49 @@ def build() -> Graph:
     g.connect(F(0.0), "Float1", brake, "Float2")
     g.connect(F(1.0), "Float1", brake, "Float3")
 
-    # ---- steering muscle (v0): Autosteer toward NEXT centre (dev-proven aim;
-    #      the P2 two-ahead aim drove into walls at 77kph - 21:59 evidence) ----
+    # ---- apex racing line from the Left/Right corridor edges (user 2026-09-22;
+    #      Waypoint.GetLeftPoint/GetRightPoint = car-width-aware edges) ----
+    # target = L + (R - L) * clamp(-cross_y * KAPEX, 0, 1): turn left -> t=0 ->
+    # Left edge; turn right -> t=1 -> Right edge. cross_y = nA.z*nB.x - nA.x*nB.z
+    # (reuses the severity chain normals). KAPEX sign FLIPS sides if the car
+    # apexes outside - observable on track, then edit the Float node in-game.
+    l1 = g.add("RacingV2Waypoint", modifier="1")            # Left edge of Next
+    r1 = g.add("RacingV2Waypoint", modifier="2")            # Right edge of Next
+    g.connect(wp_next, "Waypoint1", l1, "Waypoint1")
+    g.connect(wp_next, "Waypoint1", r1, "Waypoint1")
+    sa = g.add("Vector3Split")
+    g.connect(nA, "Vector31", sa, "Vector31")
+    sb = g.add("Vector3Split")
+    g.connect(nB, "Vector31", sb, "Vector31")
+    m1 = g.add("MultiplyFloats")                            # nA.z * nB.x
+    g.connect(sa, "Float3", m1, "Float1")
+    g.connect(sb, "Float1", m1, "Float2")
+    m2 = g.add("MultiplyFloats")                            # nA.x * nB.z
+    g.connect(sa, "Float1", m2, "Float1")
+    g.connect(sb, "Float3", m2, "Float2")
+    crossy = g.add("SubtractFloats")                        # az*bx - ax*bz
+    g.connect(m1, "Float1", crossy, "Float1")
+    g.connect(m2, "Float1", crossy, "Float2")
+    tside = g.add("MultiplyFloats")
+    g.connect(crossy, "Float1", tside, "Float1")
+    g.connect(F(-2.0), "Float1", tside, "Float2")           # KAPEX: FLIP SIGN HERE
+    tclamp = g.add("ClampFloat")
+    g.connect(tside, "Float1", tclamp, "Float1")
+    g.connect(F(0.0), "Float1", tclamp, "Float2")
+    g.connect(F(1.0), "Float1", tclamp, "Float3")
+    edge = g.add("SubtractVector3")                         # R - L
+    g.connect(r1, "Vector31", edge, "Vector31")
+    g.connect(l1, "Vector31", edge, "Vector32")
+    escale = g.add("ScaleVector3")                          # (R - L) * t
+    g.connect(edge, "Vector31", escale, "Vector31")
+    g.connect(tclamp, "Float1", escale, "Float1")
+    apex = g.add("AddVector3")                              # L + (R - L) * t
+    g.connect(l1, "Vector31", apex, "Vector31")
+    g.connect(escale, "Vector31", apex, "Vector32")
+
+    # ---- steering muscle (v0): Autosteer toward the computed apex ----
     steer = g.add("Autosteer")
-    g.connect(p1, "Vector31", steer, "Vector31")
+    g.connect(apex, "Vector31", steer, "Vector31")
 
     # ---- wall brake from the front ray (driver_config: r=0.75 d=12 avoid=4) ----
     sc = g.add("Spherecast")
