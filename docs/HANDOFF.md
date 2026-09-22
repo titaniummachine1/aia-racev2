@@ -589,3 +589,26 @@ STAGE 3b (next capture, one small C addition): runtime VALUE reads:
 -  run_commands silently no-ops some payloads (size-sensitive) - ALWAYS verify
 -  writes with Test-Path/Get-Item output and build files from ~0.5-1KB chunks.
 
+
+-### 2026-09-22 - ALL THREE REPOS PUSHED TO GITHUB (titaniummachine1)
+-
+-aia_graphc (PUBLIC) - compiler, profiles gate, dropmap/hints, AHA_MOMENTS.
+-aia_comp-sim (PUBLIC) - mode gate, dropdowns, graph_vm Rust, TITANIUM ENGINE
+-  now TRACKED (competition over, user directive - un-ignored build_titanium.py
+-  + data/titanium + Position.txt).
+aia-racev2 (PUBLIC, NEW) - probe source, captures, ABI, docs, this ledger.
+-  81 files / 47k lines. .gitignore = versions/ + *.exe/*.obj/*.bin + pyc only.
+-Binaries policy (user): NO binaries on GitHub - game binaries from Discord,
+-  probe exes rebuildable from tracked source + build_meta.ps1.
+-
+-### VM DIRECTIVE (user 2026-09-22)
+-
+-Extracted game VMs/interpreters STAY pushed (hard-won, needed for unit tests),
+-but the CANONICAL artifact must be REAL, MAINTAINABLE RUST CODE - an exact
+-behavioral copy of each game interpreter for unit tests (like
+-aia_comp-sim/src/graph_vm/ for tennis/soccer; racing 37-op VM gets the same).
+-Raw opcode dumps are regenerable evidence (re-grab with the probe tool any
+-time) - never treat a dumped opcode table as the source of truth. Extraction
+-of VMs from ALL games stays a goal: tennis v15f next (the BASELINE).
+-
+
