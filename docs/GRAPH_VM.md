@@ -95,3 +95,16 @@ WheelRL/RR + Engine + Driveshaft -> acceleration; Engine health 0 -> AoE explosi
 - structs: VehicleData (maxSpeed/acceleration/steerSpeed = Stat mapping),
   WheelFrictionData (grip curve), HybridAStarTypes.PlanOptions (wheelbaseMeters,
   maxSteerDegrees), DamageableVehiclePart (damage model).
+
+
+## Solver semantics (user/creator knowledge, 2026-09-22)
+
+- Evaluation is SINGLE-PASS per tick in instruction order. The solver does NOT
+-  iterate to a fixpoint: **loops / cyclic dataflow never converge** (this is why
+-  the game creator tells authors not to use loops).
+-  Consequence for our compiler: emit DAGs in topological order so one pass
+-  resolves every register. Loop-like behaviour only via UNROLLING, which costs
+-  size - and size is exactly what slows the in-game solver (optimization goal
+-  = minimal nodes + minimal transitions per tick).
+-  racing_vm.rs execute() mirrors this: one ordered pass, no iteration.
+

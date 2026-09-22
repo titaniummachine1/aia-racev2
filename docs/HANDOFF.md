@@ -612,3 +612,17 @@ aia-racev2 (PUBLIC, NEW) - probe source, captures, ABI, docs, this ledger.
 -of VMs from ALL games stays a goal: tennis v15f next (the BASELINE).
 -
 
+
+
+### 2026-09-22 - THE VALIDATION LOOP IS TEXT-IN / TXT-OUT (aha A15/A16)
+-
+-Game loads graph AUTHORING json-text from `games/Racing/data/graphs/`
+-  (LoadGraphTexts; the 14 known-good AIs are already there as txt).
+-  Format: serializableNodes(id, sID, modifier, serializablePorts typed
+-  Float1/2/3...) + serializableConnections(port0SID, port1SID).
+-Readout: TimePlot nodes dump per-tick *.txt next to the game runtime.
+-Loop: author probe graph text -> drop in graphs/ -> run -> read outputs ->
+-  diff vs aia_comp-sim/src/graph_vm/racing_vm.rs (canonical VM).
+-Connection semantics (aha A16): typed-port WIRES (dataflow), not goto at the
+-  save level; empirical connection-order probe to confirm execution ordering.
+

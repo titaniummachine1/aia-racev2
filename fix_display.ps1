@@ -17,7 +17,10 @@ foreach ($v in $set.Keys) {
 }
 
 # Stop Windows DPI scaling from shrinking the window (125% desktop scaling).
+# NOTE: include the MAIN game dir (manual launches) - versions\ copies alone
+# left aialanders-legacy\games\Racing\Aialanders.exe tiny on the desktop.
 foreach ($exe in @(
+  'C:\gitProjects\aialanders-legacy\games\Racing\Aialanders.exe',
   'C:\gitProjects\aia-racev2\versions\v0.22\Aialanders.exe',
   'C:\gitProjects\aia-racev2\versions\v0.22f\Aialanders.exe')) {
   reg add 'HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers' `
