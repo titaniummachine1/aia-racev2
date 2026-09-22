@@ -1,13 +1,8 @@
-racecar: round 6 - TURN FEASIBILITY BRAIN + 15-point budget (user facts).
-(1) STAT BUDGET = 15 not 20 (overexert = game trims top-to-bottom); alloc =
-speed 7 / turn 8 / health 0 (crash feedback: too much speed, not enough turn).
-(2) Closed-form rollout for WILL-I-MAKE-THIS-TURN: corner radius
-R = abc/(2|cross_y|) from the waypoint triple, shrunk by corridor width
-(Distance(L,R) = the waypoint dims; edges already car-extent aware via
-ProjectExtentsOntoAxis), then the energy test v^2 > A_LAT*R_eff + 2*A_BRAKE*d
--> brake_corner BEFORE the wall (squares only - the ISA has no sqrt/power
-node). (3) brake = max3(speed-brake, wall-ray brake, corner brake) via
-((a+b-|a-b|)/2) stages; throttle interlocks with (1-brake) so it lifts.
-Car pos = GetCar(2)->CarInfo->RelativePosition(13) (all hint-pinned).
-KNOBS (live Float nodes): A_LAT 25, A_BRAKE 8, K_WIDTH 0.1, FAST 220.
+racecar: round 7 - the traumatized-car fix (user: he wont drive). TWO poison
+paths in round 6 stood the car still: (1) R = abc/(2|cross|) divided by ZERO
+on straight segments -> NaN through the brake chain into the throttle; now
+denom is clamped [0.02, 1e9] so straights = huge R = no corner brake. (2) the
+wall brake latched ON when the ray returned 0 instead of infinity for
+no-hit; now a hitmask (clamp(d*10, 0, 1)) zeroes the wall brake on no reading.
+Gentle rebuild: 122 nodes / 172 conns, same brain, no NaN, no stuck brakes.
 
