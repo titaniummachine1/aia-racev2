@@ -1,0 +1,76 @@
+=== sharedassets0.assets MonoBehaviour path_id=8367 len=524 markers=['The car to be processed']
+  'CarGetPart'
+  'Get Car Part'
+  'GetCarPart'
+  'A selection of Transform options that represent a current location in the simulation. Transforms contain position and rotation information that can be processed via the Relative Position node into a world position'
+  'Car1'
+  'The car to be processed'
+  'Transform1'
+  'The location of the part'
+  'Float1'
+  'The percentage health of the selected part'
+=== sharedassets0.assets MonoBehaviour path_id=8368 len=728 markers=['Information about', 'The car to be processed']
+  'CarInfo'
+  'Car Info'
+  'CarInfo'
+  'Information about a specific car'
+  'Car1'
+  'The car to be processed'
+  'Transform1'
+  'The transform of the input car'
+  'Vector31'
+  'The velocity of the input car'
+  'Bool1'
+  'Whether the input car was created by AI or not. This includes LLM created solutions and machine learning agents'
+  'Bool2'
+  'Whether the input car has been immobilized'
+  'Float1'
+  "The total health of the input car given all of it's component parts"
+  'Float2'
+  "The total health of the input car given all of it's component parts"
+=== sharedassets0.assets MonoBehaviour path_id=8863 len=604 markers=['NODE']
+  '<size=18><b>ABSOLUTE NODE</b></size>\n<indent=10>Forces any number to a positive value'
+=== sharedassets0.assets MonoBehaviour path_id=8888 len=708 markers=['Input(s)', 'Output(s)']
+  '<indent=15><size=16><b>Input(s)</b></size>\n<indent=25>Float1\n<indent=35>The number value to force positive\n\n<indent=15><b>Output(s)</b>\n<indent=25>Float1\n<indent=35>The resulting number value\n'
+=== sharedassets0.assets MonoBehaviour path_id=9219 len=528 markers=['read more']
+  'read more'
+=== sharedassets0.assets MonoBehaviour path_id=11006 len=524 markers=['NODE']
+  'NODES'
+=== sharedassets0.assets MonoBehaviour path_id=8367 len=524 markers=['The car to be processed']
+  'CarGetPart'
+  'Get Car Part'
+  'GetCarPart'
+  'A selection of Transform options that represent a current location in the simulation. Transforms contain position and rotation information that can be processed via the Relative Position node into a world position'
+  'Car1'
+  'The car to be processed'
+  'Transform1'
+  'The location of the part'
+  'Float1'
+  'The percentage health of the selected part'
+=== sharedassets0.assets MonoBehaviour path_id=8368 len=728 markers=['Information about', 'The car to be processed']
+  'CarInfo'
+  'Car Info'
+  'CarInfo'
+  'Information about a specific car'
+  'Car1'
+  'The car to be processed'
+  'Transform1'
+  'The transform of the input car'
+  'Vector31'
+  'The velocity of the input car'
+  'Bool1'
+  'Whether the input car was created by AI or not. This includes LLM created solutions and machine learning agents'
+  'Bool2'
+  'Whether the input car has been immobilized'
+  'Float1'
+  "The total health of the input car given all of it's component parts"
+  'Float2'
+  "The total health of the input car given all of it's component parts"
+=== sharedassets0.assets MonoBehaviour path_id=8863 len=604 markers=['NODE']
+  '<size=18><b>ABSOLUTE NODE</b></size>\n<indent=10>Forces any number to a positive value'
+=== sharedassets0.assets MonoBehaviour path_id=8888 len=708 markers=['Input(s)', 'Output(s)']
+  '<indent=15><size=16><b>Input(s)</b></size>\n<indent=25>Float1\n<indent=35>The number value to force positive\n\n<indent=15><b>Output(s)</b>\n<indent=25>Float1\n<indent=35>The resulting number value\n'
+=== sharedassets0.assets MonoBehaviour path_id=9219 len=528 markers=['read more']
+  'read more'
+=== sharedassets0.assets MonoBehaviour path_id=11006 len=524 markers=['NODE']
+  'NODES'

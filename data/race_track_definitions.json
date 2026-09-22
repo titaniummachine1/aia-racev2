@@ -1,0 +1,51 @@
+[
+ {
+  "asset": "sharedassets0.assets:8159",
+  "strings": [
+   "BeachCoilV2",
+   "Beach Coil"
+  ]
+ },
+ {
+  "asset": "sharedassets0.assets:8160",
+  "strings": [
+   "CloverV2",
+   "Clover"
+  ]
+ },
+ {
+  "asset": "sharedassets0.assets:8161",
+  "strings": [
+   "CrissCrossV2",
+   "Criss Cross"
+  ]
+ },
+ {
+  "asset": "sharedassets0.assets:8162",
+  "strings": [
+   "FigureEightV2",
+   "Figure Eight"
+  ]
+ },
+ {
+  "asset": "sharedassets0.assets:8163",
+  "strings": [
+   "SnettertonV2",
+   "Snetterton"
+  ]
+ },
+ {
+  "asset": "sharedassets0.assets:8164",
+  "strings": [
+   "StandardV2",
+   "Standard"
+  ]
+ },
+ {
+  "asset": "sharedassets0.assets:8165",
+  "strings": [
+   "TrainingV2",
+   "Training"
+  ]
+ }
+]

@@ -1,0 +1,1047 @@
+{
+ "Float": {
+  "count": 495,
+  "files": [
+   "22NODES.txt",
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "0": 112,
+   "1": 111,
+   "25": 16,
+   "40": 15,
+   "0.5": 15,
+   "50": 12,
+   "5": 12,
+   "-1": 11,
+   "2": 9,
+   "60": 8,
+   "35": 8,
+   "70": 8,
+   "30": 7,
+   "100": 7,
+   "3": 7,
+   "0.1": 7,
+   "53": 7,
+   "45": 7,
+   "65": 7,
+   "20": 6,
+   "55": 6,
+   "10": 5,
+   "0.41": 4,
+   "-0.999": 4,
+   "0.999": 4,
+   "48": 4,
+   "15": 3,
+   "0.2": 3,
+   "0.6": 3,
+   "0.25": 3,
+   "22": 3,
+   "1.5": 2,
+   "0.8": 2,
+   "80": 2,
+   "57.29578": 2,
+   "4": 2,
+   "0.3": 2,
+   "12": 2,
+   "23": 2,
+   "29": 2,
+   "27": 2,
+   "31": 2,
+   "34": 2,
+   "37.5": 2,
+   "44": 2,
+   "0.85": 2,
+   "0.37": 2,
+   "-0.12": 1,
+   "200": 1,
+   "18": 1,
+   "-42": 1,
+   ".1": 1,
+   "0.35": 1,
+   "300": 1,
+   "100000": 1,
+   "180": 1,
+   "1.2": 1,
+   "57.2957795131": 1,
+   "3.5": 1,
+   "170": 1,
+   "1.1": 1,
+   "0.75": 1,
+   "0.33": 1,
+   "1.4": 1,
+   "120": 1,
+   "1.3": 1,
+   ".48": 1,
+   "0.95": 1,
+   "0.9": 1,
+   "36": 1,
+   "6": 1,
+   "0.48": 1,
+   "-0.17": 1,
+   "-.17": 1,
+   "0.45": 1,
+   "-0.2": 1
+  },
+  "data_keys": {}
+ },
+ "CompareFloats": {
+  "count": 114,
+  "files": [
+   "22NODES.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "2": 57,
+   "1": 41,
+   "3": 10,
+   "4": 3
+  },
+  "data_keys": {}
+ },
+ "ConditionalSetFloatV2": {
+  "count": 95,
+  "files": [
+   "22NODES.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "1": 23,
+   "0": 11
+  },
+  "data_keys": {}
+ },
+ "RacingV2Waypoint": {
+  "count": 89,
+  "files": [
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "0": 38,
+   "1": 25,
+   "2": 22,
+   "3": 4
+  },
+  "data_keys": {}
+ },
+ "AddFloats": {
+  "count": 88,
+  "files": [
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "CompareBool": {
+  "count": 88,
+  "files": [
+   "MattCole.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "0": 71,
+   "1": 9,
+   "3": 6,
+   "4": 1,
+   "2": 1
+  },
+  "data_keys": {}
+ },
+ "SetVariable": {
+  "count": 78,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "pos": 3,
+   "dist FR": 3,
+   "dist F": 3,
+   "dist FL": 3,
+   "Waypoint 1": 3,
+   "Waypoint 2": 3,
+   "Waypoint 3": 3,
+   "pos Backward": 2,
+   "pos Right": 2,
+   "pos Left": 2,
+   "pos Forward": 2,
+   "dist R": 2,
+   "dist L": 2,
+   "hit FL": 2,
+   "hit F": 2,
+   "hit FR": 2,
+   "waypointlerp": 2,
+   "25mph": 2,
+   "30mph": 2,
+   "40mph": 2,
+   "35mph": 2,
+   "45mph": 2,
+   "50mph": 2,
+   "55mph": 2,
+   "60mph": 2,
+   "65mph": 2,
+   "70mph": 2,
+   "RayDistance": 1,
+   "CarPosition": 1,
+   "CarVelocity": 1,
+   "DirectionToWaypoint": 1,
+   "FlatCarVelocity": 1,
+   "SteerRayOffset": 1,
+   "MaxAvoidDistance": 1,
+   "No trace?": 1,
+   "Ramp?": 1,
+   "RampMagnitude": 1,
+   "Wall?": 1,
+   "Fallback?": 1,
+   "hit L": 1,
+   "hit R": 1,
+   "Waypoint -1": 1,
+   "Waypoint 1L": 1,
+   "Waypoint 1R": 1
+  },
+  "data_keys": {}
+ },
+ "SubtractFloats": {
+  "count": 78,
+  "files": [
+   "MattCole.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "GetVariable": {
+  "count": 71,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "Waypoint 1": 8,
+   "Waypoint 2": 6,
+   "pos": 5,
+   "waypointlerp": 4,
+   "30mph": 4,
+   "35mph": 4,
+   "40mph": 4,
+   "45mph": 4,
+   "50mph": 4,
+   "55mph": 4,
+   "60mph": 4,
+   "65mph": 4,
+   "CarPosition": 2,
+   "Waypoint 3": 2,
+   "dist F": 2,
+   "25mph": 2,
+   "70mph": 2,
+   "RayDistance": 1,
+   "SteerRayOffset": 1,
+   "FlatCarVelocity": 1,
+   "MaxAvoidDistance": 1,
+   "Waypoint 1L": 1,
+   "Waypoint 1R": 1
+  },
+  "data_keys": {}
+ },
+ "MultiplyFloats": {
+  "count": 71,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Debug": {
+  "count": 66,
+  "files": [
+   "AIA.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "RacingV2GetWaypoint": {
+  "count": 63,
+  "files": [
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "0": 32,
+   "2": 23,
+   "1": 8
+  },
+  "data_keys": {}
+ },
+ "ConstructVector3": {
+  "count": 63,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Vector3Split": {
+  "count": 58,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Region": {
+  "count": 51,
+  "files": [
+   "22NODES.txt",
+   "AIA.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "Cosmetics": 9,
+   "Car Data": 3,
+   "Waypoint 1": 3,
+   "Waypoint 2": 3,
+   "Waypoint 3": 3,
+   "Debug Ground Point template": 3,
+   "Debug Ground Point Waypoint 1": 3,
+   "Debug Ground Point Waypoint 2": 3,
+   "Debug Ground Point Waypoint 3": 3,
+   "Steering": 2,
+   "Vector XZ Angle Formula": 2,
+   "Upcoming turn angle": 2,
+   "Debug Ground Point Waypoint -1": 2,
+   "zxcxczvbcvxbncbvnvbnmnbm.,": 2,
+   "//Waypoint steering": 2,
+   "//Right turn on true": 2,
+   "Throttle": 1,
+   "Ramp check": 1,
+   "Waypoint -1": 1,
+   "Car angle to upcoming turn": 1
+  },
+  "data_keys": {}
+ },
+ "Color": {
+  "count": 49,
+  "files": [
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "Auburn": 12,
+   "Yellow": 7,
+   "Dark Green": 6,
+   "Green": 5,
+   "Light Blue": 4,
+   "Blue": 4,
+   "Blonde": 3,
+   "Red": 3,
+   "Hot Pink": 1,
+   "Brown": 1,
+   "Black": 1,
+   "Pink": 1,
+   "Tan": 1
+  },
+  "data_keys": {}
+ },
+ "HitInfo": {
+  "count": 48,
+  "files": [
+   "22NODES.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "RelativePosition": {
+  "count": 47,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "0": 11,
+   "1": 6,
+   "3": 6,
+   "4": 6,
+   "13": 5,
+   "2": 4,
+   "9": 2,
+   "10": 2,
+   "11": 2
+  },
+  "data_keys": {}
+ },
+ "Distance": {
+  "count": 47,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Not": {
+  "count": 46,
+  "files": [
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Relay": {
+  "count": 41,
+  "files": [
+   "AIA.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "controller.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Stat": {
+  "count": 39,
+  "files": [
+   "22NODES.txt",
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "8": 9,
+   "7": 8,
+   "0": 7,
+   "10": 3,
+   "2": 2,
+   "3": 2,
+   "6": 2,
+   "4": 2,
+   "9": 2,
+   "1": 1,
+   "5": 1
+  },
+  "data_keys": {}
+ },
+ "DivideFloats": {
+  "count": 36,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "AddVector3": {
+  "count": 35,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "RacingV2GetFloat": {
+  "count": 32,
+  "files": [
+   "MattCole.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "0": 29,
+   "2": 2,
+   "3": 1
+  },
+  "data_keys": {}
+ },
+ "ConditionalSetVector3": {
+  "count": 26,
+  "files": [
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "1": 2
+  },
+  "data_keys": {}
+ },
+ "String": {
+  "count": 23,
+  "files": [
+   "22NODES.txt",
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "The Atom Returns": 2,
+   "Blockhead": 2,
+   "22N0DES": 1,
+   "AIA": 1,
+   "AwsmeAnthony": 1,
+   "AIA (Controller)": 1,
+   "Matt Cole": 1,
+   "slowpoke - roody": 1,
+   "V1.2 - The Atom Returns": 1,
+   "V1.11The Atom Returns": 1,
+   "radius minus dist to point": 1,
+   "V3.13": 1,
+   "V3.14": 1,
+   "V3.15": 1
+  },
+  "data_keys": {}
+ },
+ "DebugDrawDisc": {
+  "count": 20,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Operation": {
+  "count": 19,
+  "files": [
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "8": 5
+  },
+  "data_keys": {}
+ },
+ "RacingV2GetCar": {
+  "count": 16,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "2": 16
+  },
+  "data_keys": {}
+ },
+ "Country": {
+  "count": 14,
+  "files": [
+   "22NODES.txt",
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "United States of America": 7,
+   "United Kingdom": 6,
+   "Unknown": 1
+  },
+  "data_keys": {}
+ },
+ "CarRaycasts": {
+  "count": 14,
+  "files": [
+   "22NODES.txt",
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "True": 8,
+   "False": 6
+  },
+  "data_keys": {}
+ },
+ "Spherecast": {
+  "count": 14,
+  "files": [
+   "22NODES.txt",
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "ConstructRacingV2Properties": {
+  "count": 14,
+  "files": [
+   "22NODES.txt",
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "ModularCarController": {
+  "count": 14,
+  "files": [
+   "22NODES.txt",
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "controller.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "SubtractVector3": {
+  "count": 14,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "CarInfo": {
+  "count": 11,
+  "files": [
+   "MattCole.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Magnitude": {
+  "count": 11,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Autosteer": {
+  "count": 9,
+  "files": [
+   "AIA.txt",
+   "AwsmeAnthonyV2.0.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "V3.13.txt",
+   "roody.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "GetCarPart": {
+  "count": 7,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "roody.txt"
+  ],
+  "modifiers": {
+   "0": 3,
+   "5": 1,
+   "4": 1,
+   "20": 1,
+   "21": 1
+  },
+  "data_keys": {}
+ },
+ "ClampFloat": {
+  "count": 7,
+  "files": [
+   "MattCole.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "ScaleVector3": {
+  "count": 7,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "DotProduct": {
+  "count": 7,
+  "files": [
+   "The Atom Returns V1.1.txt",
+   "The Atom Returns.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Normalize": {
+  "count": 6,
+  "files": [
+   "MattCole.txt",
+   "The Atom Returns V1.1.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "DebugDrawLine": {
+  "count": 6,
+  "files": [
+   "MattCole.txt",
+   "V1.2 The Atom Returns.txt",
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "Keypress": {
+  "count": 5,
+  "files": [
+   "controller.txt"
+  ],
+  "modifiers": {
+   "W": 1,
+   "S": 1,
+   "A": 1,
+   "D": 1,
+   "Space": 1
+  },
+  "data_keys": {}
+ },
+ "RacingV2GetBool": {
+  "count": 4,
+  "files": [
+   "V3.13.txt",
+   "V3.14 Derpley.txt",
+   "V3.15.txt",
+   "v2.2 Blockmobile.txt"
+  ],
+  "modifiers": {
+   "0": 4
+  },
+  "data_keys": {}
+ },
+ "Bool": {
+  "count": 4,
+  "files": [
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {
+   "1": 2,
+   "0": 2
+  },
+  "data_keys": {}
+ },
+ "Autothrottle": {
+  "count": 3,
+  "files": [
+   "AIA.txt",
+   "The Atom Returns.txt",
+   "roody.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "ConditionalSetBool": {
+  "count": 2,
+  "files": [
+   "v2.2 Blockmobile.txt",
+   "v2.3 Blockmobile light.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "RandomColor": {
+  "count": 1,
+  "files": [
+   "AIA.txt"
+  ],
+  "modifiers": {
+   "Blonde": 1
+  },
+  "data_keys": {}
+ },
+ "AbsFloat": {
+  "count": 1,
+  "files": [
+   "MattCole.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ },
+ "TimePlot": {
+  "count": 1,
+  "files": [
+   "v2.2 Blockmobile.txt"
+  ],
+  "modifiers": {},
+  "data_keys": {}
+ }
+}

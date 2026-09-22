@@ -1,0 +1,10 @@
+# Binaries only (user directive: no binaries on GitHub). Game + probe exes are
+# rebuildable/obtainable elsewhere; EVERYTHING else is tracked so cloning this
+# repo onto a fresh PC loses nothing (mod source, captures, ABI, docs, ledger).
+versions/
+*.exe
+*.obj
+*.bin
+__pycache__/
+*.pyc
+

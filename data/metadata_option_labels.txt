@@ -1,0 +1,274 @@
+# dropdown-label candidates in global-metadata.dat
+# source: c:\gitProjects\aia-racev2\versions\v0.22\Aialanders_Data\il2cpp_data\Metadata\global-metadata.dat
+# keyword-filtered; count = occurrences in the string table
+
+   10  LeftHand
+   10  RightHand
+    9  deltaTime
+    6  clickCount
+    5  Position
+    5  yPosition
+    3  Left
+    3  Right
+    3  Rotation
+    3  UpdateNeeded
+    2  Angular Velocity
+    2  Country
+    2  CurTime
+    2  Forward
+    2  Left Stick
+    2  PositionUnits
+    2  Right Stick
+    2  SourceCollider
+    2  StartRotationZ
+    2  Step Counter
+    2  Target Tracking
+    2  Timestamp
+    2  Wheels
+    2  cycleCount
+    2  devicePosition
+    2  deviceRotation
+    2  gripVelocity
+    2  isTracked
+    2  localPosition
+    2  localRotation
+    2  m_Position
+    2  m_Rotation
+    2  m_Time
+    2  m_UpdateMethod
+    2  sourceCollider
+    2  totalTime
+    1  Arcade Drift
+    1  AscII_Left
+    1  AscII_Right
+    1  BPhysics/Obi/Obi Particle Renderer
+    1  BVehicle (Car Type path footprint)
+    1  Body Type Config
+    1  BodyTypeConfig
+    1  Camera Position
+    1  CameraPosition
+    1  CameraUp
+    1  Car Type
+    1  Car1
+    1  Card slide
+    1  ChannelCount
+    1  Clear Cars
+    1  Click Count
+    1  Colliders
+    1  ContextUpdateJob
+    1  Count
+    1  Country Database
+    1  CountryDatabase
+    1  CurTimeRational
+    1  DReplay/Modular Car Replay Recorder
+    1  DateTimeOffset
+    1  DecorationCount
+    1  EPUp
+    1  Engine
+    1  Engine SFX
+    1  FGHIJCarLO
+    1  FGHIJCarOO
+    1  FPhysics/Obi/Obi Particle Attachment
+    1  FUI (Canvas)/Effects/Position As UV1
+    1  FixedUpdate
+    1  FrameOverTime
+    1  GetBodyPart
+    1  GetChildrenCount
+    1  GetDSPTime
+    1  GetKeyCount
+    1  GetLODCount
+    1  GetMipmapCount
+    1  GetPointCount
+    1  GetSceneCount
+    1  GetSubMeshCount
+    1  GetTimeManager()U
+    1  GetTouchCount
+    1  GetVertexCount
+    1  GripButton
+    1  HeadPosition
+    1  HeadRotation
+    1  Instance Count
+    1  Is Tracked
+    1  IsSelfActive
+    1  LEntities/Physics/Force Unique Collider
+    1  LateUpdate
+    1  Left Alt
+    1  Left Arrow
+    1  Left Bumper
+    1  Left Button
+    1  Left Control
+    1  Left Shift
+    1  Left Shoulder
+    1  Left Stick Press
+    1  Left Trigger
+    1  Left/Right
+    1  LeftApple
+    1  LeftCommand
+    1  LeftEyePosition
+    1  LeftEyeRotation
+    1  LeftWindows
+    1  MUpdate
+    1  MaxTime
+    1  MediaForward
+    1  MoveRotation
+    1  NewCarType
+    1  OPUp
+    1  ObjectRequestsCounter
+    1  OnPlayerLeft
+    1  OnPointerUp
+    1  OtskGWUUpFRSSE8jIHY
+    1  Page Up
+    1  PositionAsUV1
+    1  PositionChanged
+    1  PositionsCount
+    1  Post Hit FX
+    1  QUp
+    1  RSTUpVXN
+    1  RSTUpWXN2
+    1  RaceTrack
+    1  RateOverTime
+    1  RaycastHit2D
+    1  RenderFrameCount
+    1  Right Alt
+    1  Right Arrow
+    1  Right Bumper
+    1  Right Button
+    1  Right Control
+    1  Right Shift
+    1  Right Shoulder
+    1  Right Trigger
+    1  RightApple
+    1  RightCommand
+    1  RightEyePosition
+    1  RightEyeRotation
+    1  RightWindows
+    1  SampleCount
+    1  SceneRequestsCounter
+    1  ScrollSpeed
+    1  SecPosition
+    1  SetSelfActive
+    1  Spawn Cars
+    1  Speed
+    1  SplinePosition
+    1  Start Countdown
+    1  Start Position
+    1  Start Time
+    1  StartRotationX
+    1  StartRotationY
+    1  StartSpeed
+    1  Steering Mode
+    1  TAA Upscale
+    1  TColliders on these layers will be detected
+    1  Tap Count
+    1  Time
+    1  Time Control
+    1  TimePlot Events
+    1  Timescale
+    1  Track Parameters
+    1  Tracked Device
+    1  Tracking State
+    1  Up Arrow
+    1  Up/Down
+    1  Upcrmm
+    1  Update
+    1  Update Mesh
+    1  UpdateWithDelta
+    1  UploadMeshData
+    1  Upq
+    1  Upts
+    1  VCinemachine/Helpers/Cinemachine Spline Cart
+    1  VLog Waypoint Debug Snapshot (First Vehicle)
+    1  VPhysics/Obi/Obi Instanced Particle Renderer
+    1  Vehicle/Car Type
+    1  Velocity
+    1  Vive Tracker
+    1  WUpbjvehllx
+    1  Waypoint1
+    1  WaypointDebug
+    1  Wheel
+    1  Wheel Axis
+    1  Wheel Collider
+    1  Wheel Hits
+    1  Wheel Settings)
+    1  Wheel Visuals
+    1  Wheel settings
+    1  WheelCollider drive (JRS-style)
+    1  WheelPrefab
+    1  WheelSettings
+    1  ZUp/Down/Left/Right/Forward/Backward Composite
+    1  adSceneRequestsCounter
+    1  ancesCountJob
+    1  anchorMax anchoredPosition
+    1  angularVelocity
+    1  aseObjectRequestsCounter
+    1  ctRefCountCounter
+    1  ePositionComposer instead
+    1  ect Ref Count(Command Process Time
+    1  edArchivesCounter
+    1  edFilesCounter
+    1  edObjectsCounter
+    1  edScenesCounter
+    1  essStartTime
+    1  essTimeCounter
+    1  fillOrigin8alphaHitTestMinimumThreshold
+    1  freezeRotation
+    1  gpuFrameTime
+    1  graphManager(enableSelfConnection
+    1  idleEngineClip
+    1  idleEngineSource
+    1  inheritVelocity
+    1  kUpfa
+    1  leteAllTrackedJobs()
+    1  lights2limitVelocityOverLifetime
+    1  m_AttackTime
+    1  m_BoostAmount
+    1  m_CaretWidth
+    1  m_DecayTime
+    1  m_FocusTracking
+    1  m_ImagePosition
+    1  m_PositionMode
+    1  m_RotationMode
+    1  m_StandbyUpdate
+    1  m_StartTime
+    1  m_SustainTime
+    1  m_Text m_CaretBlinkRate
+    1  m_TimeEnvelope
+    1  m_Velocity
+    1  maxCount
+    1  maxDamagePerHit
+    1  maxKillSpeed
+    1  maxParticles
+    1  mediaForward
+    1  minCount
+    1  minKillSpeed
+    1  mousePosition
+    1  normalizedTime
+    1  octaveCount octaveMultiplier
+    1  or Velocity)
+    1  otherCollider
+    1  pUUpFG
+    1  pageUp
+    1  pathCount
+    1  playerCountHigh
+    1  playerCountLow
+    1  rUpva
+    1  raceLaps
+    1  randomizeTrack raceTrackIndices
+    1  relativeVelocity
+    1  rotatonBySpeed(rotationOverLifetime
+    1  setUpgrade
+    1  showTimer
+    1  sideCount
+    1  simulationSpeed
+    1  sizeBySpeed sizeOverLifetime
+    1  startRotation3D
+    1  startRotationX0startRotationXMultiplier
+    1  startRotationY0startRotationYMultiplier
+    1  startSpeed(startSpeedMultiplier
+    1  subMeshCount
+    1  tapCount
+    1  ticRigidBody
+    1  totalFrameTime
+    1  treeCountLow
+    1  useGravity0maxDepenetrationVelocity
+    1  yUpvwqcc

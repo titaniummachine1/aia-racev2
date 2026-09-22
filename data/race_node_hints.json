@@ -1,0 +1,1337 @@
+{
+ "AbsFloat": {
+  "node_id": "AbsFloat",
+  "title": "Absolute",
+  "class": "AbsFloat",
+  "description": "Convert a number to it's unsigned or absolute value",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The number to perform the function on"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8360"
+ },
+ "AddFloats": {
+  "node_id": "AddFloats",
+  "title": "Add Floats",
+  "class": "AddFloats",
+  "description": "Performs an addition operation between two numbers",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The first number to be added"
+   },
+   {
+    "id": "Float2",
+    "desc": "The second number to be added to the first"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8361"
+ },
+ "AddStrings": {
+  "node_id": "AddStrings",
+  "title": "Add Strings",
+  "class": "AddStrings",
+  "description": "Performs an addition operation between two strings",
+  "ports": [
+   {
+    "id": "String1",
+    "desc": "The first string to be concatenated"
+   },
+   {
+    "id": "String2",
+    "desc": "The second string to be concatenated to the first"
+   },
+   {
+    "id": "String1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8362"
+ },
+ "AddVector3": {
+  "node_id": "AddVector3",
+  "title": "Add Vector3",
+  "class": "AddVector3",
+  "description": "Adds two three-dimensional vectors to each other",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The first Vector3 value"
+   },
+   {
+    "id": "Vector32",
+    "desc": "The second Vector3 value to add to the first"
+   },
+   {
+    "id": "Vector31",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8363"
+ },
+ "Autothrottle": {
+  "node_id": "AutoThrottle",
+  "title": "Auto Throttle",
+  "class": "Autothrottle",
+  "description": "Controls an automobile's throttle. It will attempt to avoid obstacles.",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The target location to steer to"
+   },
+   {
+    "id": "Float1",
+    "desc": "The desired speed to be at when reaching the target location"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting throttle"
+   }
+  ],
+  "asset": "sharedassets0.assets:8364"
+ },
+ "Autosteer": {
+  "node_id": "Autosteer",
+  "title": "Auto Steer",
+  "class": "Autosteer",
+  "description": "Steers an automobile towards a target position. It uses basic path finding to determine the direction.",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The target location to steer to"
+   },
+   {
+    "id": "Float1",
+    "desc": "The target steer direction"
+   }
+  ],
+  "asset": "sharedassets0.assets:8365"
+ },
+ "Bool": {
+  "node_id": "Bool",
+  "title": "Bool",
+  "class": "Bool",
+  "description": "Represents a true/false or \"boolean\" value ",
+  "ports": [
+   {
+    "id": "Bool1",
+    "desc": "The selected value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8366"
+ },
+ "GetCarPart": {
+  "node_id": "CarGetPart",
+  "title": "Get Car Part",
+  "class": "GetCarPart",
+  "description": "A selection of Transform options that represent a current location in the simulation. Transforms contain position and rotation information that can be processed via the Relative Position node into a world position",
+  "ports": [
+   {
+    "id": "Car1",
+    "desc": "The car to be processed"
+   },
+   {
+    "id": "Transform1",
+    "desc": "The location of the part"
+   },
+   {
+    "id": "Float1",
+    "desc": "The percentage health of the selected part"
+   }
+  ],
+  "asset": "sharedassets0.assets:8367"
+ },
+ "CarInfo": {
+  "node_id": "CarInfo",
+  "title": "Car Info",
+  "class": "CarInfo",
+  "description": "Information about a specific car",
+  "ports": [
+   {
+    "id": "Car1",
+    "desc": "The car to be processed"
+   },
+   {
+    "id": "Transform1",
+    "desc": "The transform of the input car"
+   },
+   {
+    "id": "Vector31",
+    "desc": "The velocity of the input car"
+   },
+   {
+    "id": "Bool1",
+    "desc": "Whether the input car was created by AI or not. This includes LLM created solutions and machine learning agents"
+   },
+   {
+    "id": "Bool2",
+    "desc": "Whether the input car has been immobilized"
+   },
+   {
+    "id": "Float1",
+    "desc": "The total health of the input car given all of it's component parts"
+   },
+   {
+    "id": "Float2",
+    "desc": "The total health of the input car given all of it's component parts"
+   }
+  ],
+  "asset": "sharedassets0.assets:8368"
+ },
+ "CarRaycasts": {
+  "node_id": "CarRaycasts",
+  "title": "Car Sensors",
+  "class": "CarRaycasts",
+  "description": "Sends sensors out into the world around the car to detect infomration about the world",
+  "ports": [
+   {
+    "id": "Spherecast1",
+    "desc": "The length/size of spherecasts to send out as sensors"
+   },
+   {
+    "id": "RaycastHit1",
+    "desc": "Data from the forward left spherecast"
+   },
+   {
+    "id": "RaycastHit2",
+    "desc": "Data from the forward spherecast "
+   },
+   {
+    "id": "RaycastHit3",
+    "desc": "Data from the forward right spherecast"
+   },
+   {
+    "id": "RaycastHit4",
+    "desc": "Data from the rear left spherecast"
+   },
+   {
+    "id": "RaycastHit4",
+    "desc": "Data from the left spherecast"
+   },
+   {
+    "id": "RaycastHit5",
+    "desc": "Data from the right spherecast"
+   },
+   {
+    "id": "RaycastHit6",
+    "desc": "Data from the rear right spherecast"
+   },
+   {
+    "id": "RaycastHit7",
+    "desc": "Data from the rear spherecast"
+   },
+   {
+    "id": "RaycastHit8",
+    "desc": "Data from the rear right spherecast"
+   }
+  ],
+  "asset": "sharedassets0.assets:8369"
+ },
+ "ClampFloat": {
+  "node_id": "ClampFloats",
+  "title": "Clamp Float",
+  "class": "ClampFloat",
+  "description": "Limits or \"clamps\" a number between a minimum and maximum value",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The input value to be limited between the min and max"
+   },
+   {
+    "id": "Float2",
+    "desc": "The minimum value Float1 will be allowed to be"
+   },
+   {
+    "id": "Float3",
+    "desc": "The maxium value Float1 will be allowed to be"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8370"
+ },
+ "Color": {
+  "node_id": "Color",
+  "title": "Color",
+  "class": "Color",
+  "description": "Outputs the color value selected in the dropdown",
+  "ports": [
+   {
+    "id": "Color1",
+    "desc": "The selected value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8371"
+ },
+ "CompareBool": {
+  "node_id": "CompareBool",
+  "title": "Compare Bool",
+  "class": "CompareBool",
+  "description": "Evalutes two boolean values against the operation selected in the dropdown",
+  "ports": [
+   {
+    "id": "Bool1",
+    "desc": "The first value"
+   },
+   {
+    "id": "Bool2",
+    "desc": "The value to compare to the first"
+   },
+   {
+    "id": "Bool1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8372"
+ },
+ "CompareFloats": {
+  "node_id": "CompareFloats",
+  "title": "Compare Floats",
+  "class": "CompareFloats",
+  "description": "Evalutes two float values against the operation selected in the dropdown",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The number representing the left side of the comparison"
+   },
+   {
+    "id": "Float2",
+    "desc": "The number representing the right side of the comparison"
+   },
+   {
+    "id": "Bool1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8373"
+ },
+ "CompareStrings": {
+  "node_id": "CompareStrings",
+  "title": "Compare Strings",
+  "class": "CompareStrings",
+  "description": "Evalutes two string values against the operation selected in the dropdown",
+  "ports": [
+   {
+    "id": "String1",
+    "desc": "The string representing the left side of the comparison"
+   },
+   {
+    "id": "String2",
+    "desc": "The string representing the right side of the comparison"
+   },
+   {
+    "id": "Bool1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8374"
+ },
+ "ConditionalSetBool": {
+  "node_id": "ConditionalSetBool",
+  "title": "Conditional Set Bool",
+  "class": "ConditionalSetBool",
+  "description": "Evaluates the input bool against the dropdown selection to toggle between two different boolean values",
+  "ports": [
+   {
+    "id": "Bool1",
+    "desc": "The value to compare against the dropdown selection"
+   },
+   {
+    "id": "Bool2",
+    "desc": "If the evalation of the dropdown and Bool1 is TRUE, this value will bet set as the result"
+   },
+   {
+    "id": "Bool3",
+    "desc": "If the evalation of the dropdown and Bool1 is FALSE, this value will bet set as the result"
+   },
+   {
+    "id": "Bool1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8375"
+ },
+ "ConditionalSetFloat": {
+  "node_id": "ConditionalSetFloat",
+  "title": "Conditional Set Float",
+  "class": "ConditionalSetFloat",
+  "description": "Legacy version. Use ConditionalSetFloatV2 for new graphs. Returns one float based on condition (trueValue if condition, else falseValue).",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8376"
+ },
+ "ConditionalSetFloatV2": {
+  "node_id": "ConditionalSetFloatV2",
+  "title": "Conditional Set Float",
+  "class": "ConditionalSetFloatV2",
+  "description": "Evaluates the input bool against the dropdown selection to toggle between two different number values",
+  "ports": [
+   {
+    "id": "Bool1",
+    "desc": "The value to compare against the dropdown selection"
+   },
+   {
+    "id": "Float1",
+    "desc": "If the evalation of the dropdown and Bool1 is TRUE, this value will bet set as the result"
+   },
+   {
+    "id": "Float2",
+    "desc": "If the evalation of the dropdown and Bool1 is FALSE, this value will bet set as the result"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8377"
+ },
+ "ConditionalSetString": {
+  "node_id": "ConditionalSetString",
+  "title": "Conditional Set String",
+  "class": "ConditionalSetString",
+  "description": "Evaluates the input bool against the dropdown selection to toggle between two different string values",
+  "ports": [
+   {
+    "id": "Bool1",
+    "desc": "The value to compare against the dropdown selection"
+   },
+   {
+    "id": "String1",
+    "desc": "If the evaluation of the dropdown and Bool1 is TRUE, this value will be set as the result"
+   },
+   {
+    "id": "String2",
+    "desc": "If the evaluation of the dropdown and Bool1 is FALSE, this value will be set as the result"
+   },
+   {
+    "id": "String1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8378"
+ },
+ "ConditionalSetVector3": {
+  "node_id": "ConditionalSetVector3",
+  "title": "Conditional Set Vector3",
+  "class": "ConditionalSetVector3",
+  "description": "Evaluates the input bool against the dropdown selection to toggle between two different Vector3 values",
+  "ports": [
+   {
+    "id": "Bool1",
+    "desc": "The value to compare against the dropdown selection"
+   },
+   {
+    "id": "Vector31",
+    "desc": "If the evalation of the dropdown and Bool1 is TRUE, this value will bet set as the result"
+   },
+   {
+    "id": "Vector32",
+    "desc": "If the evalation of the dropdown and Bool1 is FALSE, this value will bet set as the result"
+   },
+   {
+    "id": "Vector31",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8379"
+ },
+ "ConstructRacingV2Properties": {
+  "node_id": "ConstructRacingProperties",
+  "title": "Properties",
+  "class": "ConstructRacingV2Properties",
+  "description": "Sets cosmetic options for this car",
+  "ports": [
+   {
+    "id": "String1",
+    "desc": "The name to be assigned to the Aialander name tag"
+   },
+   {
+    "id": "Country1",
+    "desc": "The country this Aialander is representing"
+   },
+   {
+    "id": "Color1",
+    "desc": "The color of the Aialander's skin"
+   },
+   {
+    "id": "Float1",
+    "desc": "The body style to use (0 = male, 1 = female). Value wraps to prevent errors"
+   },
+   {
+    "id": "Float2",
+    "desc": "The hair style to use. Value wraps to prevent errors"
+   },
+   {
+    "id": "Color2",
+    "desc": "The color of the character's hair"
+   },
+   {
+    "id": "Float3",
+    "desc": "The facial hair style to use. Value wraps to prevent errors"
+   },
+   {
+    "id": "Color3",
+    "desc": "The color of the car"
+   },
+   {
+    "id": "String2",
+    "desc": "An optional image URL to download and apply to the Aialander's outfit. Link to UV template below"
+   },
+   {
+    "id": "Stat1",
+    "desc": "An optional image URL to download and apply to the Aialander's outfit. Link to UV template below"
+   },
+   {
+    "id": "Stat2",
+    "desc": "An optional image URL to download and apply to the Aialander's outfit. Link to UV template below"
+   },
+   {
+    "id": "Stat3",
+    "desc": "An optional image URL to download and apply to the Aialander's outfit. Link to UV template below"
+   }
+  ],
+  "asset": "sharedassets0.assets:8380"
+ },
+ "ConstructVector3": {
+  "node_id": "ConstructVector3",
+  "title": "Construct Vector3",
+  "class": "ConstructVector3",
+  "description": "Creates a Vector3 data type from three input numbers",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The number to be used for the x value of the constructed Vector3"
+   },
+   {
+    "id": "Float2",
+    "desc": "The number to be used for the y value of the constructed Vector3"
+   },
+   {
+    "id": "Float3",
+    "desc": "The number to be used for the z value of the constructed Vector3"
+   },
+   {
+    "id": "Vector31",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8381"
+ },
+ "Country": {
+  "node_id": "Country",
+  "title": "Country",
+  "class": "Country",
+  "description": "Outputs the country value selected in the dropdown",
+  "ports": [
+   {
+    "id": "Country1",
+    "desc": "The selected value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8382"
+ },
+ "CreateFunction": {
+  "node_id": "CreateFunction",
+  "title": "Construct Custom Function",
+  "class": "CreateFunction",
+  "description": "Defines a reusable custom function. Drop nodes inside, wire Param outputs and the Return input, then call it with a Custom Function node.",
+  "ports": [
+   {
+    "id": "Any1",
+    "desc": "Return value from the function body (Any1 In; Param1 is Any1 Out)"
+   },
+   {
+    "id": "Any1",
+    "desc": "Function parameter 1"
+   },
+   {
+    "id": "Any2",
+    "desc": "Function parameter 2"
+   },
+   {
+    "id": "Any3",
+    "desc": "Function parameter 3"
+   },
+   {
+    "id": "Any4",
+    "desc": "Function parameter 4"
+   }
+  ],
+  "asset": "sharedassets0.assets:8383"
+ },
+ "CrossProduct": {
+  "node_id": "CrossProduct",
+  "title": "Cross Product",
+  "class": "CrossProduct",
+  "description": "Calculates the cross product of two Vector3. The result is a new vector perpendicular to the two inputs",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The first input vector"
+   },
+   {
+    "id": "Vector32",
+    "desc": "The second input vector"
+   },
+   {
+    "id": "Vector31",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8384"
+ },
+ "Debug": {
+  "node_id": "Debug",
+  "title": "Debug",
+  "class": "Debug",
+  "description": "Displays the real-time value of the output connection",
+  "ports": [
+   {
+    "id": "Any1",
+    "desc": "An input of any data type"
+   }
+  ],
+  "asset": "sharedassets0.assets:8398"
+ },
+ "DebugDrawDisc": {
+  "node_id": "DebugDrawDisc",
+  "title": "Debug Draw Disc",
+  "class": "DebugDrawDisc",
+  "description": "Draws a 2D disc in worldspace. Useful for debugging and/or visualizing information. All discs are drawn on the XY plane",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The centerpoint of the drawn disc"
+   },
+   {
+    "id": "Float1",
+    "desc": "The radius of the drawn disc"
+   },
+   {
+    "id": "Float2",
+    "desc": "The thickness of the drawn disc"
+   },
+   {
+    "id": "Color1",
+    "desc": "The color to set the disc"
+   }
+  ],
+  "asset": "sharedassets0.assets:8399"
+ },
+ "DebugDrawLine": {
+  "node_id": "DebugDrawLine",
+  "title": "Debug Draw Line",
+  "class": "DebugDrawLine",
+  "description": "Draws a 2D line in worldspace. Useful for debugging and/or visualizing information",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The start point of the line"
+   },
+   {
+    "id": "Vector32",
+    "desc": "The end point of the line"
+   },
+   {
+    "id": "Float1",
+    "desc": "The thickness of the line"
+   },
+   {
+    "id": "Color1",
+    "desc": "The color of the line"
+   }
+  ],
+  "asset": "sharedassets0.assets:8400"
+ },
+ "Distance": {
+  "node_id": "Distance",
+  "title": "Distance",
+  "class": "Distance",
+  "description": "Calculates the distance between two points",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The first point"
+   },
+   {
+    "id": "Vector32",
+    "desc": "The second point"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8401"
+ },
+ "DivideFloats": {
+  "node_id": "DivideFloats",
+  "title": "Divide Floats",
+  "class": "DivideFloats",
+  "description": "Performs a divide operation between two numbers",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The dividend or number to be divided"
+   },
+   {
+    "id": "Float2",
+    "desc": "The divisor or number to be divided by"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8402"
+ },
+ "DotProduct": {
+  "node_id": "DotProduct",
+  "title": "Dot Product",
+  "class": "DotProduct",
+  "description": "Returns the dot product between two inputs. Dot product can be used to compare two Vector3 directions and get one number back that tells you how much they point the same way.\n1 = same direction\n0 = perpendicular\n-1 = opposite direction\n",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The first input vector"
+   },
+   {
+    "id": "Vector32",
+    "desc": "The second input vector"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8403"
+ },
+ "Float": {
+  "node_id": "Float",
+  "title": "Float",
+  "class": "Float",
+  "description": "Represents a real number",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The typed value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8404"
+ },
+ "Function": {
+  "node_id": "Function",
+  "title": "Custom Function",
+  "class": "Function",
+  "description": "Calls a Construct Custom Function by name. Up to 4 inputs map to Param ports; the output is the function Return value when Return is wired.",
+  "ports": [
+   {
+    "id": "Any1",
+    "desc": "Parameter 1"
+   },
+   {
+    "id": "Any2",
+    "desc": "Parameter 2"
+   },
+   {
+    "id": "Any3",
+    "desc": "Parameter 3"
+   },
+   {
+    "id": "Any4",
+    "desc": "Parameter 4"
+   },
+   {
+    "id": "Any1",
+    "desc": "Return value from the selected function"
+   }
+  ],
+  "asset": "sharedassets0.assets:8405"
+ },
+ "GetVariable": {
+  "node_id": "GetVariable",
+  "title": "Get Variable",
+  "class": "GetVariable",
+  "description": "Outputs the value from the corresponding SetVariable node with the same typed value",
+  "ports": [
+   {
+    "id": "Any1",
+    "desc": "The result of the Set Variable matching the same typed name"
+   }
+  ],
+  "asset": "sharedassets0.assets:8406"
+ },
+ "HitInfo": {
+  "node_id": "HitInfo",
+  "title": "Hit Info",
+  "class": "HitInfo",
+  "description": "Processes a hit from a raycast and separates out some of it's results",
+  "ports": [
+   {
+    "id": "RaycastHit1",
+    "desc": "The raycast being checked"
+   },
+   {
+    "id": "Bool1",
+    "desc": "Was a collision detected?"
+   },
+   {
+    "id": "Float1",
+    "desc": "The distance of the collision. Returns infinitity if no collision."
+   },
+   {
+    "id": "String1",
+    "desc": "The tag of the hit collider's GameObject."
+   }
+  ],
+  "asset": "sharedassets0.assets:8407"
+ },
+ "IsNull": {
+  "node_id": "IsNull",
+  "title": "Is Null",
+  "class": "IsNull",
+  "description": "Checks if the input is a null value",
+  "ports": [
+   {
+    "id": "Any1",
+    "desc": "A connection of any data type"
+   },
+   {
+    "id": "Bool1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8408"
+ },
+ "Keypress": {
+  "node_id": "Keypress",
+  "title": "Keypress",
+  "class": "Keypress",
+  "description": "Indicates whether the selected key is currently pressed",
+  "ports": [
+   {
+    "id": "Bool1",
+    "desc": "Is the key pressed"
+   }
+  ],
+  "asset": "sharedassets0.assets:8409"
+ },
+ "Lerp": {
+  "node_id": "Lerp",
+  "title": "Lerp",
+  "class": "Lerp",
+  "description": "Linearly interpolates between A and B by T",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "Start value (A)"
+   },
+   {
+    "id": "Float2",
+    "desc": "End value (B)"
+   },
+   {
+    "id": "Float3",
+    "desc": "Interpolation factor (T)"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8410"
+ },
+ "Magnitude": {
+  "node_id": "Magnitude",
+  "title": "Magnitude",
+  "class": "Magnitude",
+  "description": "Returns the length of the input Vector",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The input value"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8413"
+ },
+ "ModularCarController": {
+  "node_id": "ModularUniformController",
+  "title": "Controller",
+  "class": "ModularCarController",
+  "description": "Sends inputs the the car to control it",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "Throttle (1 is foward, -1 is reverse)"
+   },
+   {
+    "id": "Float2",
+    "desc": "Steering (-1 is left, 1 is t"
+   },
+   {
+    "id": "Float3",
+    "desc": "Brake (any value over 0 will apply brake)"
+   }
+  ],
+  "asset": "sharedassets0.assets:8414"
+ },
+ "Modulo": {
+  "node_id": "Modulo",
+  "title": "Modulo",
+  "class": "Modulo",
+  "description": "Divides a number by another number and returns any remainder.",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The number representing the left side of the operation"
+   },
+   {
+    "id": "Float2",
+    "desc": "The number representing the right side of the operation. If this is 0, it will result in an error."
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8415"
+ },
+ "MultiplyFloats": {
+  "node_id": "MultiplyFloats",
+  "title": "Multiply Floats",
+  "class": "MultiplyFloats",
+  "description": "Performs a multiplication operation between two numbers",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The first input"
+   },
+   {
+    "id": "Float2",
+    "desc": "The second input"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8416"
+ },
+ "Normalize": {
+  "node_id": "Normalize",
+  "title": "Normalize",
+  "class": "Normalize",
+  "description": "Returns a vector with the same direction as the input but with a magnitude of 1 ",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The input value"
+   },
+   {
+    "id": "Vector31",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8417"
+ },
+ "The input value": {
+  "node_id": "Toggles the value of the input boolean. TRUE will become FALSE. FALSE will become TRUE",
+  "title": "Bool1",
+  "class": "The input value",
+  "description": "Bool1",
+  "ports": [],
+  "asset": "sharedassets0.assets:8418"
+ },
+ "Operation": {
+  "node_id": "Operation",
+  "title": "Operation",
+  "class": "Operation",
+  "description": "Performs the selected operation on the input number",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The number to perform the operation on"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8419"
+ },
+ "Power": {
+  "node_id": "Power",
+  "title": "Power",
+  "class": "Power",
+  "description": "Raises a base number to the given power (exponent)",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The base value"
+   },
+   {
+    "id": "Float2",
+    "desc": "The exponent"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8420"
+ },
+ "RacingV2GetBool": {
+  "node_id": "RacingV2GetBool",
+  "title": "Get Bool",
+  "class": "RacingV2GetBool",
+  "description": "A selection of global True/False based options represent a current parameter in the simulation",
+  "ports": [
+   {
+    "id": "Bool1",
+    "desc": "The result of the selected value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8421"
+ },
+ "RacingV2GetCar": {
+  "node_id": "RacingV2GetCar",
+  "title": "Get Car",
+  "class": "RacingV2GetCar",
+  "description": "A selection of cars in the simulation.",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "An optional index available for some options"
+   },
+   {
+    "id": "Car1",
+    "desc": "The selected value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8422"
+ },
+ "RacingV2GetFloat": {
+  "node_id": "RacingV2GetFloat",
+  "title": "Get Float",
+  "class": "RacingV2GetFloat",
+  "description": "A selection of global number-based options that represent a current parameter in the simulation",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The selected value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8423"
+ },
+ "RacingV2GetWaypoint": {
+  "node_id": "RacingV2GetWaypoint",
+  "title": "Get Waypoint",
+  "class": "RacingV2GetWaypoint",
+  "description": "A selection of track waypoints in the simulation.",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "An optional index available for some options"
+   },
+   {
+    "id": "Waypoint1",
+    "desc": "The selected waypoint"
+   }
+  ],
+  "asset": "sharedassets0.assets:8424"
+ },
+ "RacingV2Waypoint": {
+  "node_id": "RacingV2Waypoint",
+  "title": "Waypoint",
+  "class": "RacingV2Waypoint",
+  "description": "Process information about a specific waypoint",
+  "ports": [
+   {
+    "id": "Waypoint1",
+    "desc": "The waypoint to be processed"
+   },
+   {
+    "id": "Transform1",
+    "desc": "An optional transform to check against. This is only used in some dropdown options."
+   },
+   {
+    "id": "Vector31",
+    "desc": "The world position of the proccessed waypoint location"
+   },
+   {
+    "id": "Float1",
+    "desc": "The index of the input waypoint"
+   }
+  ],
+  "asset": "sharedassets0.assets:8425"
+ },
+ "RandomColor": {
+  "node_id": "RandomColor",
+  "title": "Color (Random)",
+  "class": "RandomColor",
+  "description": "On creation selects a random color and outputs it",
+  "ports": [
+   {
+    "id": "Color1",
+    "desc": "The selected value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8426"
+ },
+ "RandomFloat": {
+  "node_id": "RandomFloat",
+  "title": "Random Float",
+  "class": "RandomFloat",
+  "description": "Returns a random number value between two values. This will change every Update. This number includes decimal values",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The minimum value for the random number"
+   },
+   {
+    "id": "Float2",
+    "desc": "The maximum value for the random number"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8427"
+ },
+ "Region": {
+  "node_id": "Region",
+  "title": "Region",
+  "class": "Region",
+  "description": "Groups nodes visually for organization. Does not affect logic.",
+  "ports": [],
+  "asset": "sharedassets0.assets:8428"
+ },
+ "RelativePosition": {
+  "node_id": "RelativePosition",
+  "title": "Relative Position",
+  "class": "RelativePosition",
+  "description": "Gets the world position relative to the input Transform and based on the selected option ",
+  "ports": [
+   {
+    "id": "Transform1",
+    "desc": "The transform to extract the position from"
+   },
+   {
+    "id": "Vector31",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8429"
+ },
+ "Relay": {
+  "node_id": "Relay",
+  "title": "Relay",
+  "class": "Relay",
+  "description": "Passes through data from input to output. Useful for organizing connections and keeping the graph readable.",
+  "ports": [
+   {
+    "id": "Any1",
+    "desc": "Input of any data type to pass through"
+   },
+   {
+    "id": "Any1",
+    "desc": "The passed-through value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8430"
+ },
+ "ScaleVector3": {
+  "node_id": "ScaleVector3",
+  "title": "Scale Vector3",
+  "class": "ScaleVector3",
+  "description": "Multiplies a Vector3 by a number",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The value to scale"
+   },
+   {
+    "id": "Float1",
+    "desc": "The amount to uniformly scale by"
+   },
+   {
+    "id": "Vector31",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8431"
+ },
+ "SetVariable": {
+  "node_id": "SetVariable",
+  "title": "Set Variable",
+  "class": "SetVariable",
+  "description": "Saves the input value so that it can be used by any GetVariable nodes with a corresponding typed value. GetVariable values will always be one Update behind the value that gets set by this node ",
+  "ports": [
+   {
+    "id": "Any1",
+    "desc": "An input of any data type"
+   }
+  ],
+  "asset": "sharedassets0.assets:8432"
+ },
+ "Spherecast": {
+  "node_id": "Spherecast",
+  "title": "Spherecast",
+  "class": "Spherecast",
+  "description": "A spherecast is like a laser with thickness that checks whether an object would hit anything in front of it.",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The radius of the spherecast to be sent out"
+   },
+   {
+    "id": "Float2",
+    "desc": "The maximum distance to check for collisions from the spherecast origin"
+   },
+   {
+    "id": "Spherecast1",
+    "desc": "The spherecast that will check for collisions"
+   }
+  ],
+  "asset": "sharedassets0.assets:8433"
+ },
+ "Stat": {
+  "node_id": "Stat",
+  "title": "Stat",
+  "class": "Stat",
+  "description": "A stat value represents a number value in stat form. This is meant to be constant per simulation",
+  "ports": [
+   {
+    "id": "Stat1",
+    "desc": "The resulting stat value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8434"
+ },
+ "String": {
+  "node_id": "String",
+  "title": "String",
+  "class": "String",
+  "description": "Represents a text value",
+  "ports": [
+   {
+    "id": "String1",
+    "desc": "The typed value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8435"
+ },
+ "SubtractFloats": {
+  "node_id": "SubtractFloats",
+  "title": "Subtract Floats",
+  "class": "SubtractFloats",
+  "description": "Performs a subtract operation between two numbers",
+  "ports": [
+   {
+    "id": "Float1",
+    "desc": "The number to subtract from"
+   },
+   {
+    "id": "Float2",
+    "desc": "The number to subtract"
+   },
+   {
+    "id": "Float1",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8436"
+ },
+ "SubtractVector3": {
+  "node_id": "SubtractVector3",
+  "title": "Subtract Vector3",
+  "class": "SubtractVector3",
+  "description": "Performs a subtract operation between two Vector3's. This is the same as subtract each of the x,y,z components of the 2nd input from the first.",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The first input"
+   },
+   {
+    "id": "Vector32",
+    "desc": "The second input"
+   },
+   {
+    "id": "Vector31",
+    "desc": "The resulting value"
+   }
+  ],
+  "asset": "sharedassets0.assets:8437"
+ },
+ "TimePlot": {
+  "node_id": "TimePlot",
+  "title": "Time Plot",
+  "class": "TimePlot",
+  "description": "Adds a value to the time plot graph during a simulation. Series appear in the plot Data list as soon as this node is placed so they can be toggled before starting. The plot can be toggled on by pressing F1",
+  "ports": [
+   {
+    "id": "String1",
+    "desc": "The name to be assigned to the Aialander name tag"
+   },
+   {
+    "id": "Color1",
+    "desc": "The color of the line to plot"
+   },
+   {
+    "id": "String2",
+    "desc": "A URL of a custom icon to use for the graph"
+   },
+   {
+    "id": "Float1",
+    "desc": "The value to set on the graph for the current tick"
+   }
+  ],
+  "asset": "sharedassets0.assets:8438"
+ },
+ "Vector3Split": {
+  "node_id": "Vector3Split",
+  "title": "Split Vector3",
+  "class": "Vector3Split",
+  "description": "Splits a Vector3 into it's three corresponding x, y, and z values",
+  "ports": [
+   {
+    "id": "Vector31",
+    "desc": "The Vector3 to be split into it's components"
+   },
+   {
+    "id": "Float1",
+    "desc": "The x component of the input Vector3"
+   },
+   {
+    "id": "Float2",
+    "desc": "The y component of the input Vector3"
+   },
+   {
+    "id": "Float3",
+    "desc": "The z component of the input Vector3"
+   }
+  ],
+  "asset": "sharedassets0.assets:8439"
+ }
+}

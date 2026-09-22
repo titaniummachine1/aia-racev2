@@ -1,0 +1,309 @@
+# dropdown-label candidates (v0.22f metadata, title-case filtered)
+# sorted alphabetically; count = string-table occurrences
+
+  1  Arcade Drift
+  1  Auto-restart
+  1  BGoal position tolerance (meters).
+  1  BGoogle Inc.  All rights reserved.
+  1  BMax pitch from accel/brake input.
+  1  BMaximum particle linear velocity.
+  1  BRuntime/2D/Common/PixelSnapping.h
+  1  BRuntime/2D/Sorting/SortingGroup.h
+  1  BRuntime/Director/Core/FrameRate.h
+ 17  BRuntime/Director/Core/HPlayable.h
+  1  BRuntime/Graphics/DisplayManager.h
+  1  BRuntime/Graphics/LOD/LODUtility.h
+  1  BRuntime/Profiler/MemoryProfiler.h
+  2  BRuntime/Transform/RectTransform.h
+  1  BUsed when Goal Transform is null.
+  3  BUses managed World under the hood
+  1  BVehicle (Car Type path footprint)
+  1  BlendMode
+  1  BlightmapBakeMode.lightmapBakeType
+  1  BlocksRaycasts
+  1  BodyTypeConfig
+  1  Brake
+  1  Car Type
+  1  Car1
+  1  Card slide
+  1  Clapping
+  1  Clear Cars
+  2  Color.white
+  2  Composition
+  2  CurTime
+  1  CurTimeRational
+  1  DMaximum particle angular velocity.
+  1  DPlease use Triangle.Border instead
+  1  DReplay/Modular Car Replay Recorder
+  3  DRuntime/2D/Common/ClipperWrapper.h
+  1  DRuntime/Application/AdsIdHandler.h
+  1  DRuntime/Burst/BurstDelegateCache.h
+  9  DRuntime/GfxDevice/GfxDeviceTypes.h
+  1  DRuntime/Graphics/Mesh/MeshFilter.h
+  1  DRuntime/Graphics/QualitySettings.h
+  1  DRuntime/Graphics/ShadingRateInfo.h
+  1  DUsed when mode is Fixed reference.
+  3  Damage
+  1  DateTimeOffset
+  1  Debug Next
+  1  Debug Previous
+  8  Delta
+  1  DisableDebugs
+  1  Disabled
+  1  Disabled State
+  4  Display Index
+  1  Display Stats
+  1  Draw sampled Dubins (forward-only) start
+  1  Drive mode
+  1  FAbsolute cap on wheel motor torque.
+  1  FArcade visual body tilt (mesh only)
+  1  FColor of the friction speed gizmos.
+  3  FCopyright 
+  1  FExtra pitch from high drive torque.
+  1  FRuntime/Graphics/ShadingRateImage.h
+  1  FRuntime/Math/ColorSpaceConversion.h
+  1  FRuntime/Math/SphericalHarmonicsL2.h
+  1  FRuntime/Mono/DelayedCallAwaitable.h
+  3  FRuntime/SceneManager/SceneManager.h
+  1  FScale of the friction speed gizmos.
+  1  FThe distance to the point of focus.
+  1  FUI (Canvas)/Effects/Position As UV1
+  1  FWidth of the wheel, expressed in m.
+  1  FixationPoint
+  4  ForceMode.Force
+  1  FrameOverTime
+  1  Game State
+  1  GetBodyPart
+  1  GetDSPTime
+  1  GetPointCount
+  1  GetRigidbody
+  1  GetWrapModeU
+  1  Goal snapping
+  1  GripButton
+  1  HITJZ
+  1  HLength of the wheel axis/directions.
+  3  HRuntime/2D/Common/SpriteDataAccess.h
+  2  HRuntime/2D/SpriteAtlas/SpriteAtlas.h
+  1  HRuntime/Diagnostics/IntegrityCheck.h
+  1  HRuntime/Interfaces/ITerrainManager.h
+  1  HRuntime/Materials/ParticlesUnlit.matU
+  1  HRuntime/Scripting/ScriptingUtility.h
+  1  HThe debug display mode for colliders.
+  1  HThe full hash of the animation state
+  1  HeadPosition
+  1  Health
+  1  Hfullscreen state of the application.U
+  1  Hinge Angle
+  1  Hloads a scene by index into the gameU
+  2  Indexer
+  9  Indexing
+  1  IsGrounded
+  1  IsSelfActive
+  1  JAccesses managed World under the hood
+  1  JArcade feel (single-rigidbody sphere)
+  1  JColor used for hover state on buttons
+  1  JRuntime/Application/ApplicationInfo.h
+  1  JRuntime/Debug/ProbeVolumeDebug.shaderU
+  2  JRuntime/Export/Debug/Debug.bindings.h
+  1  JRuntime/GfxDevice/HDROutputSettings.h
+  2  JRuntime/Misc/ResourceManagerUtility.h
+  1  JRuntime/NameFormatter/NameFormatter.h
+  2  LActiveObjects is static and not shared
+  1  LDamping for Rotate With Follow Target.
+  1  LMax damage applied in a single impact.
+  5  LRuntime/Director/Core/HPlayableGraph.h
+  1  LRuntime/File/AsyncReadManagerMetrics.h
+  1  LRuntime/Graphics/LOD/LODGroupManager.h
+  1  LRuntime/Mono/AsyncOperationAwaitable.h
+  1  LRuntime/Scripting/DelayedCallUtility.h
+  1  LUse GetTangentMode and SetTangentMode.
+  3  Left
+  1  Left Alt
+  1  Left Arrow
+  1  Left Bumper
+  1  Left Button
+  1  Left Control
+  1  Left Shift
+  1  Left Shoulder
+  2  Left Stick
+  1  Left Trigger
+  1  Left/Right
+  1  LeftApple
+  1  LeftCommand
+  1  LeftEyePosition
+  1  LeftEyeRotation
+ 10  LeftHand
+  1  LeftWindows
+  2  Lifetime
+  1  LifetimeLoss
+  1  LoadSceneMode
+  1  Lthe scale at which time is passing by.U
+  1  MNY6PReV
+  1  Main in a static class called Program
+  1  Match Stats
+  1  Max steer angle in degrees. 35
+  1  MaxTime
+  1  NControls which layers the rays can hit.
+  1  NRPM threshold to shift up to next gear.
+  6  NRuntime/Director/Core/HPlayableOutput.h
+  1  NRuntime/Export/Gizmos/Gizmos.bindings.h
+  1  NRuntime/Export/Math/Gradient.bindings.h
+  1  NRuntime/Export/Random/Random.bindings.h
+  1  NRuntime/Graphics/QualitySettingsTypes.h
+  1  NRuntime/PreloadManager/PreloadManager.h
+  1  NRuntime/ScriptingBackend/ScriptingApi.h
+  1  NUI Toolkit/Panel Raycaster (UI Toolkit)
+  1  NewCarType
+  1  Number of spherecast observations (6
+  1  OnPlayerLeft
+  1  OnPointerClick
+  1  OnPointerDown
+  1  OnPointerEnter
+  1  OnPointerExit
+  1  OnPointerUp
+  6  PIT
+  1  PITW
+  1  PITW2
+  1  PITWAFJ
+  1  PITWC
+  2  PRuntime/2D/Common/ClipperOffsetWrapper.h
+  1  PRuntime/Debug/ProbeSamplingDebugMesh.fbxU
+  1  PWhich camera mode this preset activates.
+  1  PanelRaycaster
+  3  Point
+  1  Point budget
+  1  PointerClickMessageListener.cs
+  1  PointerDownMessageListener.cs
+  1  PointerEnterMessageListener.cs
+  1  PointerExitMessageListener.cs
+  1  PointerUpMessageListener.cs
+  5  Position
+  1  PositionAsUV1
+  1  PositionChanged
+  2  PositionUnits
+  1  PositionsCount
+  1  Post Hit FX
+  1  RAutomatic recentering to at-rest position
+  1  RIf playing a timeline, start at this time
+  1  RLogging Frequency (Development mode only)
+  1  RRuntime/2D/Common/SpriteDataMarshalling.h
+  1  RRuntime/Decal/DBuffer/DBufferClear.shaderU
+  1  RRuntime/Export/Hashing/Hash128.bindings.h
+  1  RRuntime/File/AsyncReadManagerManagedApi.h
+  1  RRuntime/GfxDevice/ScalableBufferManager.h
+  9  RRuntime/Graphics/GraphicsScriptBindings.h
+  1  RSimulation wind expressed in local space.
+  1  RThe weight of the group member at index 0
+  1  RThe weight of the group member at index 1
+  1  RThe weight of the group member at index 2
+  1  RThe weight of the group member at index 3
+  1  RThe weight of the group member at index 4
+  1  RThe weight of the group member at index 5
+  1  RThe weight of the group member at index 6
+  1  RThe weight of the group member at index 7
+  1  RUse NativeSetThreadIndexAttribute instead
+  1  Random goal
+  1  RateOverTime
+  1  RaycastHit2D
+  2  Realtime
+  1  Returns class
+  3  Right
+  1  Right Alt
+  1  Right Arrow
+  1  Right Bumper
+  1  Right Button
+  1  Right Control
+  1  Right Shift
+  1  Right Shoulder
+  2  Right Stick
+  1  Right Trigger
+  1  RightApple
+  1  RightCommand
+ 10  RightHand
+  1  RightWindows
+  1  Runtime
+  1  Runtime Content
+  1  SPEED
+  1  ScrollSpeed
+  1  SecPosition
+  1  SetCurrentIndex
+  1  SetSelfActive
+  1  ShadowmaskMode
+  1  Shapes/Sphere
+  1  Shapes/Triangle
+  3  Space.Self
+  1  Spawn Cars
+  1  Speed
+  1  Spherecast
+  1  SplinePosition
+  3  Start
+  1  Start Countdown
+  5  Start Match
+  1  Start Position
+  1  Start Recording
+  1  Start Time
+  1  StartColor
+  1  StartDelay
+  1  StartFrame
+  1  StartInfo
+  1  StartLifetime
+  1  StartRotationX
+  1  StartRotationY
+  2  StartRotationZ
+  2  StartSizeX
+  1  StartSizeY
+  1  StartSizeZ
+  1  StartSpeed
+  3  Stats
+  1  Steering Mode
+  1  StereoTargetEye
+  2  TRuntime/Graphics/AsyncGPUReadbackManaged.h
+  3  TRuntime/Graphics/Mesh/MeshScriptBindings.h
+  2  TRuntime/Jobs/ScriptBindings/JobsBindings.h
+  1  TRuntime/PathTracing/Meshes/SkyBoxMesh.meshU
+  1  TRuntime/Scripting/ScriptingExportUtility.h
+  1  TSafe Radius (ECS damage + flow-field bias)
+  1  TTarget sampling rate to apply downsampling
+  1  TThe speed of change of the steering angle.
+  1  Target Settings
+  2  Target Tracking
+  1  Target zone
+  1  TestRuntime
+  1  Tests.Playmode
+  1  Time
+  1  Time Control
+  1  Time.cs
+  3  Time.deltaTime
+  1  TimePlot Events
+  1  Timescale
+  2  Timestamp
+  1  Tracking State
+  4  Triangle
+  1  Triangle 
+  1  Tstarts the supplied command as a coroutineU
+  1  UpdateWithDelta
+  1  VCinemachine/Helpers/Cinemachine Spline Cart
+  1  VComputeObjectLoadingStatus is not burstable
+  1  VLog Waypoint Debug Snapshot (First Vehicle)
+  1  VMaximum steering angle magnitude (degrees).
+  1  VRuntime/2D/SpriteAtlas/SpriteAtlasManager.h
+  1  VRuntime/Export/Graphics/Graphics.bindings.h
+  2  VRuntime/Export/Scripting/ScriptingRuntime.h
+  1  VRuntime/PreloadManager/LoadSceneOperation.h
+  1  VShow tick and time-control state on screen.
+  1  VTarget localScale once the shrink finishes.
+  1  VWhen to move the cart, if Speed is non-zero
+  1  Velocity
+  1  Waypoint1
+  1  WaypointDebug
+  1  Wheel 
+  1  Wheel Axis
+  1  Wheel Collider
+  1  Wheel Hits
+  1  Wheel Visuals
+  1  Wheel settings 
+  1  WheelCollider drive (JRS-style) 
+  1  WheelPrefab
+  1  WheelSettings
+  2  Wheels
+  1  ZThe debug display mode for collider edges.

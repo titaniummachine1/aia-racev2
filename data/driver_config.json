@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "throttle": 0.9,
+  "brake": 0.0,
+  "steerSensitivity": 1.0,
+  "obstacleAvoidance": true,
+  "spherecastRadius": 0.75,
+  "spherecastDistance": 12.0,
+  "avoidNearDistance": 4.0,
+  "avoidSteerStrength": 1.25
+}
+

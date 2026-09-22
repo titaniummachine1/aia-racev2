@@ -1,0 +1,272 @@
+# Inspector tooltip sentences (v0.22f metadata) - the constants surface
+
+A multiplier by which the forward/reverse gear ratios are multiplied. Commonly also called differential (diff) gear rati
+A\Assets\UI Node Connect 4\Scenes\ScrollView Graph\Scripts\Zoom.cs
+Absolute forward speed (m/s) at or below which the car is considered idling (no throttle = idle instead of coast).
+Action name for throttle (forward/back). Same as Arcade VP: Throttle.
+Aero downforce application point offset from the vehicle center of mass.
+All shapes now use the same static DashStyle property by default, when UseDashes is enabled
+All vehicle audio (engine, skid, brake) and impact VFX. Auto-found on this object if unset.
+All wheels inside must hold for this long (seconds). Only used when no TargetStall is present.
+Angular inertia of the engine. Higher value will result in an engine that takes longer time to spin up/down.
+Array holding the wheels belonging to this vehicle in the front left, front right, rear left, rear right, etc. order.
+Array of wheel pairs belonging to the same axle.  A pair consists of a left and a right wheel, in that order.
+As of Shapes 4.0.0, dash state is now set using the global Draw.UseDashes and Draw.DashStyle
+Assign a CarTypeSO to set stats and spawn body/wheel visuals. Leave empty to use inspector values with manually assigned
+At this |speed| (m/s), dynamic forward offset reaches driveSphereDynamicForwardMax.
+Axis controlling the scale of the current distance.  Value is a scalar multiplier and is applied to the specified camera
+AxisState.Recentering is deprecated.  Use InputAxis and InputAxisController instead
+BMax pitch from accel/brake input.
+BShould the wheel gizmos be drawn?
+Ball speed (m/s) required for a save or post hit to trigger the crowd ooh.
+Big reward when car successfully parks (all wheels in, slow, aligned).
+Body lean per corner where wheel or axle is detached (FL/FR/RL/RR + matching axle types).
+Body model prefab. Place WheelMount components on child GameObjects to define wheel positions.
+Body-mounted damageable parts. Prefer assigning the explicit fields below so it's obvious what's missing. Wheel FL/FR/RL
+Brake throttle magnitude used while stopping in the hold zone (opposes current velocity).
+Brake torque applied to all wheels when brake input > 0. Used as default for front/rear if not overridden.
+Brake torque on rear wheels. Leave at 0 to use brakeForce. Higher rear brake = rears lock first, tail can step out.
+Brake torque used while changing direction (forward <-> reverse).
+CinemachineInputProvider has been deprecated. Use InputAxisController instead.
+Corresponds to a threshold on the delta angle between the inverted vehicle's velocity at a given contact point and the c
+Current skidmark color. The alpha channel will be ignored since that  is determined by the wheel slip.
+DColor of the friction slip gizmos.
+DDrift: slip-based torque reduction
+DPlease use Triangle.Border instead
+DScale of the friction slip gizmos.
+Damage = relativeImpactSpeed * damagePerSpeedUnit (capped by maxDamagePerHit).
+Defines the roll of the path at this waypoint.  The other orientation axes are inferred from the tangent and world up.
+Determines how the engine angular velocity is calculated from the wheel angular velocities. Maximum is recommended for v
+Distance beyond which we give small reward for approach speed (efficient navigation from far).
+Duration of the free-rotation window opened by the engine explosion (and the default for EnableFreeRotation calls).
+E\Assets\Kart Racing Deluxe Pack\Demo\demo_scripts\KartDemoMovement.cs
+Enable 4-wheel drive. When false, only front wheels get motor torque.
+Enables the CPU and GPU boost mode before engine startup to decrease startup time.
+Enabling this option will update the static broadphase incrementally whenever changes between simulation steps occur, po
+EndProfile8Render Graph Execution errorxInvalid render graph state, impossible to log the exception.fOnly textures can b
+Enum member LightType.Area has been deprecated. Use LightType.Rectangle instead (UnityUpgradable) -> Rectangle
+ExactPositionWithStaticOrigin: The control's center of origin is fixed. The stick will immediately jump to the exact pos
+Extra body pitch/roll (degrees) when a wheel corner part (FL/FR/RL/RR) is lost or broken.
+Extra distance below each wheel transform checked for drivable contact.
+Extra multiplier on the explosion force/torque applied to parts that DETACH during this blast. Lets debris fly off harde
+Extra wheels-inside bonus when steering is low and yaw matches stall (truly parked).
+FAbsolute cap on wheel motor torque.
+FArrival speed (m/s). The car drives at full throttle and only begins braking when within the physics-based braking dist
+FCamera Z roll, or tilt, in degrees.
+FColor of the friction speed gizmos.
+FExtra pitch from high drive torque.
+FIf this is on, static properties set inside of Draw.Command will apply only within that draw command. This is usually m
+FScale of the friction speed gizmos.
+FWidth of the wheel, expressed in m.
+For consistency, this has been renamed as of Shapes 4.0.0. Please use Draw.TriangleBorder instead
+Forward speed multiplier per FixedUpdate in drift so drift doesn't feel like a wall. 0.995 = preserve speed.
+Friction curve. X represents slip and Y represents the grip coefficient.
+GameObject to enable/disable based on state (e.g. the button or its container). Hidden during replay and recording.
+Gear ratios; index 0 = 1st gear. More gears = smoother acceleration and higher top speed.
+HLength of the wheel axis/directions.
+HThe full hash of the animation state
+HThe mouth shape controller to update
+Handbrake = brake + (throttle or steer) 
+Health fraction below which part is considered 'deformed' (affects vehicle behavior).
+Hfullscreen state of the application.U
+Horizontal distance to goal below which neutral throttle is output when the target speed is zero.
+How far ahead on the orbit (degrees) each teammate chases from their current angle.
+How fast lateral velocity (slip/slide) is killed so the car doesn't fishtail. Higher = grippier, less drift.
+How long to wait (in seconds) before activating the camera. This filters out very short state durations
+How to interpret the Max Speed setting: in units/second, or as a direct input value multiplier
+IInputAxisProvider is deprecated.  Use InputAxis and InputAxisController instead
+IRequiresInput is deprecated.  Use InputAxis and InputAxisController instead
+Id = {Id}, Status = {Status}, Method = {DebuggerDisplayMethodDescription}
+Id = {Id}, Status = {Status}, Method = {DebuggerDisplayMethodDescription}, Result = {DebuggerDisplayResultDescription}
+If > 0, forces a full rebuild after this many unscaled seconds even when the goal is stationary (moving obstacles, other
+If > 0, overrides max curvature (1/m) for the curvature penalty; if 0, uses tan(maxSteer)/wheelbase.
+If >= 0, replaces ground check extra distance on the arcade controller. If < 0, keep prefab/controller default.
+If checked, Camera transform will not be controlled by this virtual camera
+If checked, signal amplitude will be multiplied by the speed of the impacting object
+If drive wheel RPM exceeds this while coasting, apply extra braking to kill stored spin faster.
+If enabled, provides a smoothed-path direction for steering (lookahead along simplified + corner-bezier path).
+If set: when the Engine part breaks off, wait this many seconds then explode.
+If throttle direction opposes current forward velocity, apply brake until speed falls below this (m/s).
+If true, a broken driveshaft part removes acceleration and top speed.
+If true, draws steering/debug polylines whenever they have been built, even when Draw Path Gizmos is off (useful in Play
+If true, the engine explosion temporarily disables auto-leveling AND clears the rb/carBody RigidbodyConstraints so the b
+If true: vehicle will drift instead of brake while holding brake.
+If true: vehicle will drift instead of brake while holding space
+If, at a given contact point between the vehicle and a mesh collider, the angle between the contact normal and the mesh 
+Invokes the specified non-static method or property with the provided arguments. Provide [argTypes] if there are ambiguo
+Invokes the specified static method or property with the provided arguments. Provide [argTypes] if there are ambiguous o
+Is the transmission automatic? Automatic transmission requires no user input for changing gears.
+JColor used for hover state on buttons
+J\Assets\Plugins\QFSW\Quantum Console\Source\Scripts\UI\ZoomUIController.cs
+LActiveObjects is static and not shared
+L\Assets\Ash Assets\Arcade Vehicle Physics\Scripts\ArcadeVehicleController.cs
+Lateral speed (m/s) in body space indicating a sharp turn / slide.
+Layer overrides for the generated wheel collider. This will affect both wheel collider cast queries, and wheel protector
+Layers affected by the engine explosion overlap. Leave empty for Everything.
+Legacy: rear brake when brake+steer. For arcade drift use driftRearBrakeTorque = 0 instead.
+List of the gear ratios for the reverse gears. The list starts with the 1st reverse gear (R1). The values should be in a
+Log GraphManager + Pointer state on click/drag (diagnose node move issues)
+Log state to Console every N FixedUpdates (0 = off). Use to capture why the kart is flying around.
+Loop played while the car is moving but not accelerating (coasting / engine braking).
+Loop played while the player is pressing throttle (|AccelerationInput| above threshold).
+M\Assets\UI Node Connect 4\Scenes\ScrollView Graph\Scripts\CustomScrollRect.cs
+Main in a static class called Program
+Max car travel (as a fraction of cell size) while still reusing the last smoothed steering direction.
+Max change in steer command [-1,1] per second. Higher = snappier; 0 = no extra smoothing. Uses fixedDeltaTime for determ
+Max extra local Z on SphereRB along travel direction (SignedSpeed). 0 = disabled.
+Max steer angle (degrees) for front wheels and drive direction. Drive is applied in the direction the wheels point.
+Max steer angle in degrees. 35
+Maximum alpha value that the skidmark can have, no matter the wheel slip.
+Maximum brake torque that can be applied to a wheel. Final wheel brake torque also depends on the brake coefficient for 
+Maximum force the anti-roll bar can exert on one side of the suspension, in anattempt to reduce the body roll. Correctly
+Maximum relative velocity that can be produced when separating dynamic rigid bodies intersecting with static rigid bodie
+Maximum torque the engine can produce. The final torque value also depends on the EngineTorqueCurve.
+Maximum wheel steer angle, in degrees. Can be negative to flip the steer direction.
+Minimum speed (m/s) for drift assist. Below this, no yaw or velocity shaping.
+Minimum world-space scale enforced on wheel visual transforms named 'Wheel'. Prevents tiny ECS wheel visuals.
+Motor force applied to wheels (scaled by gear ratio). Damage reduces effective value.
+Motor torque multiplier when slip is above threshold. 0.9 = mild cut; higher = more power while sliding.
+Mouth shape controller to drive. Auto-found on this object if not set.
+Move the cart with this speed along the path.  The value is interpreted according to the Position Units setting.
+NAerodynamic downforce coefficient (Cl).
+NRPM threshold to shift up to next gear.
+N\Assets\Plugins\QFSW\Quantum Console\Source\Scripts\UI\BlurShaderController.cs
+None - Apply no easing to the animation. The animation speed is linear.
+Normalized torque curve representing engine angular velocity on the X axis and the torque on the Y axis. 
+Number of discrete steering samples across [-maxSteer, +maxSteer]. Odd numbers work best (e.g. 3,5,7,9). Higher = smooth
+Only smooth corners whose direction change is at least this angle (degrees).
+Optional AudioSource used to beep each second during the engine explosion countdown.
+Optional URP DecalProjector prefab; pooled and dropped from above onto the ground when an engine explosion fires.
+Optional curvature excess penalty (0 disables). Uses finite differences on a discrete curvature vs max from wheelbase an
+Optional dedicated PanelSettings for nametags. Layering vs GraphManager is controlled by GraphManager canvas sort order 
+Optional particle system whose emission increases as the engine takes damage.
+Optional separate source for one-shots; if null, uses engine sound.
+Optional. When set, agent is used for pathfinding only: speed 0, position kept at this transform.
+Optional: assign a TextMeshProUGUI to show stats. If null, uses OnGUI.
+PFriction value at high slip (asymptote).
+Parent transform under carBody where the body prefab is instantiated. Also acts as the kartLike drift rotation pivot (Bo
+Penalty for high speed near stall (default 0 = no penalty; high speed is allowed).
+Per-corner suspension average: intact = 1; damaged = this; detached = 0. Affects downforce.
+Per-second rate used to cross-fade accelerate / coast / idle volumes as state changes.
+Per-suspension: intact = 1; damaged = this; detached = 0. Affects downforce and body lean.
+Periodically log simulation gates + main vehicle state (unscaled time so it still prints when timeScale is 0).
+Physics material for the generated wheel collider. This only matters if the 'AddWheelProtectorColliders' option is enabl
+Post Integration displays the state of the data at the end of the simulation step, after rigid bodies have been integrat
+Pre Integration displays the state of the data at the beginning of the simulation step, before rigid bodies have been in
+RHow aggressively the camera tries to track the target rotation's X angle.  Small numbers are more responsive.  Larger n
+RHow aggressively the camera tries to track the target rotation's Y angle.  Small numbers are more responsive.  Larger n
+RHow aggressively the camera tries to track the target rotation's Z angle.  Small numbers are more responsive.  Larger n
+RIndex = {cell.desc.index} State = {state}
+RPlanner tuning (expand in Inspector): Cell Size Meters, Heading Bins, Step Meters, Wheelbase, Max Steer, Steering Sampl
+RTotal health-per-second restored across the vehicle, spent on parts by repair priority (engine/driveshaft first, then w
+R\Assets\Plugins\Easy Save 3\Scripts\Types\Unity Types\ES3Type_SizeBySpeedModule.cs
+Rear brake torque during drift. Keep 0 (or tiny e.g. 200) so drift doesn't bog down.
+Record one state every N simulation ticks (step-back only). Independent of ReplayManager and SnapshotManager intervals.
+RelativePositionWithStaticOrigin: The control's center of origin is fixed. The control will begin un-actuated at it's ce
+Render Unity's default scene fog in the reflection. Note that this doesn't strictly work correctly on large triangles, a
+Reward per step = scale * (wheels inside ratio). Gated by speed when near stall.
+S\Assets\Plugins\Easy Save 3\Scripts\Types\Unity Types\ES3Type_ColorBySpeedModule.cs
+S\Assets\UI Node Connect 4\Scripts\Line Renderer\Renderer Objects\Shapes\Triangle.cs
+Safety clamp for forward gear ratios to prevent runaway torque from bad inspector values.
+Safety clamp for reverse ratio to prevent runaway reverse torque.
+Scale factor to apply to 'Scroll Wheel Action' when setting the mouse 'scrollWheel' control.
+Seconds all wheels must remain inside the stall to count as parked.
+Seconds wheels are allowed outside bounds before the timer resets (prevents physics-jitter resets).
+Sets the element to disabled which will not accept input. Utilizes the :disabled pseudo state.
+Settings for controlling damping, which causes the camera to move gradually towards the desired spline position
+Sharpness of the wheel visual movement along the suspension. The higher the value, the less visual smoothing there will 
+Shepp geometric path-length bound (forward + reverse, max steer).
+Shepp). 0 = VehiclePlannerService uses its serialized PlanOptions max steer.
+Should the throttle and brake input be swapped when going in reverse? Usually true with the automatic transmission.
+Should the wheel protector collider for this wheel be added to the vehicle rigidbody? This collider represents the wheel
+Sideways velocity added per second in drift (local X). Try 7; raise to 9 for more rotation.
+Signed yaw error at this many degrees maps to full steer [-1,1].
+Single gear ratio used when in reverse. Lower = slower reverse acceleration/top speed. ~1f = one reverse gear.
+Small brake values below this are treated as zero to prevent accidental drift state.
+Small throttle values below this are treated as zero to prevent unintended torque.
+Specifies the angle between adjacent faces below which they should be made coplanar.
+Specifies the number of solver iterations the physics engine will perform.
+Specifies the number of substep iterations the physics engine will perform.
+Speed (m/s) above which steering angle is reduced for stability. 0 = no reduction.
+Speed - The spline is traversed at a given maximum speed.
+Speed in pixels per second with which to move the cursor. Scaled by the input from 'Stick Action'.
+Speed threshold (m/s) that separates 'slow/stopped' from clearly traveling forward or backward.
+Steer angle multiplier when drifting. 1.15 = more angle in drift for easier rotation.
+System.Activities.Statements, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f6787
+TAngle threshold for collision smoothing between the vehicle and mesh colliders.
+TMax distance for per-wheel ground check (rear wheels). Used to compute drive strength: 2 rear grounded = 100%%, 1 = 50%
+TPeak value of the friction curve. X represents slip and Y represents the grip coefficient. Peak friction happens when t
+TReplay engine explosion FX pool (playback)
+TShould the wheel axis/directions be drawn?
+TShould the wheel casting results be drawn?
+TThe speed of change of the steering angle.
+The RPM at which the automatic transmission will shift into a higher gear.
+The RPM at which the automatic transmission will shift into a lower gear.
+The amount of brake torque this wheel can receive as a percentage of the maximum brake torque for this wheel.
+The amount of motor torque this wheel can receive as a percentage of the maximum available torque for this wheel.
+The amount of time in seconds it takes to accelerate to MaxSpeed with the supplied Axis at its maximum value
+The amount of time in seconds it takes to accelerate to a higher speed
+The amount of time in seconds it takes to decelerate to a lower speed
+The maximum speed of this axis in units/second, or the input value multiplier, depending on the Speed Mode
+The set of instructions associating cameras with states.  These instructions are used to choose the live child at any gi
+The speed (in seconds) that the move action repeats itself once repeating (max 1 per frame).
+The speed (m/s) at which the impulse propagates through space.  High speeds allow listeners to react instantaneously, wh
+The speed at which the SteeringSensitivityHighSpeed is in full effect.The steering sensitivity is lerped between the Ste
+The speed in meters/second that the GameObject animates along the spline at.
+The state machine whose state changes will drive this camera's choice of active child
+The virtual camera to activate when the animation state becomes active
+This function is no longer used. Please use RectTransformUtility.ScreenPointToLocalPointInRectangle() instead.
+This means they are not static commands, and instead requires instance(s) of the class in order to invoke the command.
+This property is no longer valid.  Check the loading status of the scene returned from LoadAsync.
+This property is no longer valid.  Check the loading status of the scene returned from LoadSceneAsync.
+This unfortunately needs access to the managed world for the ExternalAPIState.
+This value represents the additional steering angle that will be applied to the wheel on the inside of the turning circl
+UI Image that shows a warning/critical symbol when wheels are damaged.
+Unused for wheel corners: attached wheels always count full until detached. Kept for serialized assets.
+Unused with current wheel rules (attached wheels count full until detached). Kept for asset compatibility.
+Unused: attached wheels count full until detached. Kept for compatibility.
+Use StopPropagation and/or FocusController.IgnoreEvent. Before proceeding, make sure you understand the latest changes t
+VCinemachine/Cinemachine State Driven Camera
+VCinemachine/Helpers/Cinemachine Spline Roll
+VComputeObjectLoadingStatus is not burstable
+VExtra roll multiplier while torque is high.
+VMaximum steering angle magnitude (degrees).
+VShow tick and time-control state on screen.
+VUse m_InfiniteClipOffsetEulerAngles Instead
+VWhen to move the cart, if Speed is non-zero
+V\Assets\Plugins\Easy Save 3\Scripts\Types\Unity Types\ES3Type_RotationBySpeedModule.cs
+Vector2 action that feeds into the mouse 'scrollWheel' action (scaled by 'Scroll Speed').
+Velocity = arcade velocity/torque. WheelColliders = JRS-style motor torque, steering, gears, brakes on WheelColliders.
+What distance needs to be covered by the wheel for a new section to be generated?
+Wheel speed limiter, with braking applied once the set speed is exceeded. Set to lesser or equal to 0 to deactivate.
+WheelCollider drive (JRS-style) 
+Wheels-inside reward only applied when speed below this (avoids 'buzzing' in stall).
+When a dynamic obstacle is within this distance along desired travel direction, output a stop/brake command (Wait/Repath
+When enabled, draws a wire rectangle footprint along each debug path corner so you can see clearance issues.
+When enabled, multiplies X scroll by texture width/height so speed is texel-consistent on non-square textures.
+When enabled, nametags hide after a delay unless a visualized stat or game state changes.
+When enabled, roll eases into and out of the data point values.  Otherwise, interpolation is linear.
+When enabled, steers along the NavMesh path with lookahead. When disabled, steers toward the next path corner.
+When far from stall (beyond parkingRadiusForAlignment), tiny reward for speed toward stall (efficient approach).
+When health reaches 0, detach from vehicle (spawn debris or enable physics).
+When kartLike is false: rate (1/sec) at which yaw spin decays toward 0 so the car goes straight when you stop steering. 
+When on (default), matches standard arcade karts: disabling this GameObject freezes rigidbodies and sets canMove false. 
+When rear sideways slip exceeds this, motor torque is scaled down. Raise (e.g. 1.2) or set 0 so drift can sustain. 0 = d
+When set and vehicle is not player-controlled, reads steering/throttle/brake from Brain.
+When true and GameManager.Instance is DemoDerbyGameManager, skips Hybrid A* / NavMesh steering and steers straight towar
+When true, ModularArcadeVehicleController registers DamageableVehiclePart on the spawned body/wheels and applies driving
+When true, applies light brake torque on throttle release to bleed wheel RPM and prevent post-drift slingshot.
+When true, new messages keep the history scrolled to the latest line.
+When within Arrival Hold Position, if speed exceeds this (m/s), apply braking until below it.
+When within parkingRadiusForSpeed and mostly inside, reward for low speed.
+When within parkingRadiusForSpeed, progress reward is multiplied by this so each step into the stall is more rewarding (
+Whether or not the wheel collider provides contacts. This only matters if the 'AddWheelProtectorColliders' option is ena
+While playing, planning uses a child proxy transform fed from Autosteer/AutoThrottle Vector31 (same frame as gate output
+Within this horizontal distance of the goal position, prefer steering to match the desired goal heading (if provided).
+World Y for replay engine decals (matches vehicle ExplosionDecalPool drop height).
+World-space rolling radius. Leave at 0 to derive from the sphere collider.
+XMax steer angle in degrees for front wheels.
+XWhen holding both brake and throttle (e.g. drift), multiply brake force by this so you don't kill the slide. 1 = full b
+Yaw torque when drifting: steering left/right rotates the car into the slide. Try 35, raise to 45 if it won't rotate eno
+ZDetermines how much the longitudinal slip affects the lateral friction. Wheels with value of 1 will have no lateral fri
+ZReferences managed engine API and static data
