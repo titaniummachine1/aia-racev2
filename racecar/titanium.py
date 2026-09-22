@@ -1,5 +1,8 @@
 """TITANIUM - our fastest-car AI (the user named it, 2026-09-22).
 
+SANDBOX ONLY - NOT A SIMULATOR (user rule 2026-09-22). Numbers here are design
+signals, not times. REAL baseline = 1:49 on Training, measured in-game.
+
 This is the build sheet: pick the stat allocation per track shape and report
 lap times. TIMING PROVENANCE: times from here are the PYTHON LAP SIMULATOR on
 synthetic tracks - the game does NOT run for these (nothing should pop up).
@@ -14,15 +17,19 @@ NAME = "TITANIUM"
 
 
 def build(corner_radius: float = 18.0) -> dict:
-    """Search the 20-pt budget on a track shape -> the Titanium allocation."""
+    """Search the budget on a track shape -> the Titanium allocation.
+
+    HEALTH IS NEVER ALLOCATED (user rule 2026-09-22: useless stat - no wall
+    contact = no damage). Speed first, steering second.
+    """
     track = synthetic_track(corner_radius=corner_radius)
     rows = search(track)
-    lt, speed, turn, health = rows[0]
+    lt, speed, turn = rows[0]
     return {
         "name": NAME,
         "speed": speed,
         "turn": turn,
-        "health": health,
+        "health": 0,
         "sim_lap": lt,
         "track_radius": corner_radius,
     }
@@ -33,7 +40,7 @@ if __name__ == "__main__":
         b = build(r)
         print(
             f"{NAME} build for corner r={b['track_radius']:4.1f}m -> "
-            f"speed={b['speed']} turn={b['turn']} health={b['health']}  "
+            f"speed={b['speed']} turn={b['turn']} health=0 (useless)  "
             f"sim lap={b['sim_lap']:.2f}s"
         )
     print()

@@ -1,6 +1,10 @@
-racecar/make_titanium_save.py: emit the Titanium car save (dev minimal follower
-template + Titanium allocation 4/10/6 + name). Stat mapping by PORT ID with
-bidirectional connection tracing + assert-3-before-write (first version
-silently wrote unmapped stats - self-caught via the trace, fixed).
-Writes both load points: Saves/RacingV2 + games/Racing/data/graphs.
+racecar: TitaniumV2 = the analytical controller AS A GAME GRAPH (41 nodes /
+50 wires, deployed to Saves/RacingV2 + data/graphs). Severity = 1-dot of
+normalized waypoint segments (sign-invariant), v_tgt = clamp(FAST-severity*
+GAIN), throttle/brake = pure float clamps (no enum guesses), Autosteer as v0
+steer muscle toward P2 lookahead, ModularCarController direct drive,
+TimePlot(v_tgt,speed)+Debug(brake) = observable assumptions. Plus
+extract_templates.py (53 node templates + port/polarity maps mined from the
+14 saves) + graph_builder.py (save emitter). Constants deduped (size =
+solver speed). Sandbox files stamped NOT A SIMULATOR (user rule).
 
